@@ -550,6 +550,28 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-drag.is-on::after{left:100%;opacity:1;animation:gyfCaret 1s steps(1) 1.6s infinite;}
 @keyframes gyfCaret{0%{opacity:1}50%{opacity:0}}
 
+/* ===== [수정] 모바일 본문 — text-wrap:pretty 해제 (전체 점검 결과) ===== */
+/* pretty는 '마지막 줄이 혼자 짧아지지 않게' 앞줄에서 단어를 끌어내린다.
+   글줄이 긴 웹에서는 유효하지만, 200~340px짜리 모바일 칸에서는 첫 줄이
+   30~58px씩 짧아져 '여백이 남는데 왜 넘어가지'로 보인다.
+   전체 텍스트를 360·390·430px에서 켠 경우/끈 경우로 재 본 결과:
+     첫 줄이 길어진 곳 2~6개(+29~58px) · 나빠진 곳 0개 · 줄 수가 늘어난 곳 0개
+   실측 예(390px):
+     검증된 맛집…   209+139 → 265+83   (첫 줄 +56px)
+     양림동으로 떠나는… 105+83 → 134+54 (첫 줄 +29px)
+     고속버스를 이용하면… 222/250/232/139 → 273/199/288/83
+
+   제목(h1~h4)의 text-wrap:balance는 그대로 둔다. 제목은 가운데 정렬이라
+   두 줄 길이가 비슷한 편이 낫고, 실제로 꺼 보면 더 나빠진다
+   (h3 '2026은 호남관광문화주간! 이런 투어는 어때요?' 187+145 → 275+57).
+   대신 마지막 줄이 짧아지는 것은 감수한다 — 첫 줄을 채우는 쪽을 택했다 */
+@media (max-width:720px){
+  .contents_div .gyf-page :where(p,li){text-wrap:wrap;}
+}
+@container gyfwrap (max-width:720px){
+  .contents_div .gyf-page :where(p,li){text-wrap:wrap;}
+}
+
 /* ===== [추가] 코스 약도 — 경로선·핀 등장 연출 ===== */
 /* .gyf-rt-anim은 스크립트가 붙인다 → JS가 안 돌면 선도 핀도 그냥 다 보인다.
    경로선은 따라 그리지 않고 통째로 한 번에 나타난다(0.26초).
@@ -1419,7 +1441,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-hcard--poster > .gyf-hcard-body{display:contents;}
   .contents_div .gyf-page .gyf-hcard--poster > .gyf-fig{
     float:right;height:auto;
-    width:clamp(84px, calc(61.5vw - 121px), 118px);
+    width:clamp(84px, calc(61.5vw - 121px), 104px);  /* 상한 118 → 104: 옆 글줄 칸이 185→199px로 넓어져 줄 수가 줄어든다 */
     margin:0 0 10px 12px;
     border:1px solid var(--c-cline);border-radius:6px;overflow:hidden;
   }
