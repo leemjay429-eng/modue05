@@ -69,7 +69,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page p:has(> .gyf-br-web){text-wrap:wrap;}
 .contents_div .gyf-page .gyf-nw{white-space:nowrap;}
 
-/* ── 섹션 ── */
+/* 섹션 */
 .contents_div .gyf-page .gyf-sec{width:100%;padding:var(--band) clamp(16px,6.25%,50px);background:var(--c-sec);}
 .contents_div .gyf-page .gyf-sec--gray{background:var(--c-band);}
 .contents_div .gyf-page .gyf-shead{display:flex;align-items:flex-start;gap:18px;padding-bottom:22px;margin-bottom:var(--headgap);border-bottom:2px solid var(--c-navy);}
@@ -91,7 +91,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-lead{font-size:var(--fs-lead);line-height:1.7;color:var(--c-sub);}
 .contents_div .gyf-page .gyf-h4{font-family:'Paperozi','Pretendard',sans-serif;font-weight:700;font-size:var(--fs-h4);line-height:1.45;color:var(--c-navy);}
 
-/* ── 히어로 ── */
+/* 히어로 */
 .contents_div .gyf-page .gyf-sec.gyf-hero{padding:0;background:var(--c-dark);color:#fff;text-align:center;}
 .contents_div .gyf-page .gyf-hero-body{padding-bottom:var(--band);background:var(--c-dark);}
 .contents_div .gyf-page h1.gyf-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
@@ -102,7 +102,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-intro .gyf-h1 span{display:inline-block;}
 .contents_div .gyf-page .gyf-intro .gyf-p{color:rgba(255,255,255,.86);text-wrap:wrap;text-align:center;}
 
-/* 앵커 내비 — 티켓 */
+/* 앵커 내비 */
 .contents_div .gyf-page .gyf-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 12px;padding:38px clamp(16px,6.25%,50px) 0;}
 .contents_div .gyf-page .gyf-nav-btn{
   display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 18px;
@@ -194,7 +194,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* 교차할인 */
 .contents_div .gyf-page .gyf-swap{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);margin-top:var(--hgap);}
-/* 티켓 테두리: mask로 뚫린 홈까지 따라가도록 부모에 drop-shadow로 1px 외곽선 */
 .contents_div .gyf-page .gyf-swap{filter:drop-shadow(1px 0 0 #DDDDE2) drop-shadow(-1px 0 0 #DDDDE2) drop-shadow(0 1px 0 #DDDDE2) drop-shadow(0 -1px 0 #DDDDE2) drop-shadow(0 6px 10px rgba(42,39,49,.08));}
 .contents_div .gyf-page .gyf-tk{
   --main:40%; --hole:10px; --hx:var(--main);
@@ -430,12 +429,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 }
 
-
-/* ── 정렬: 큰 틀은 중앙, 콘텐츠 블록은 좌측 ── */
+/* 정렬: 큰 틀은 중앙, 콘텐츠 블록은 좌측 */
 /* 중앙: 섹션 헤더 · 인트로 · 푸터 */
-/* 섹션 헤더 — [번호|키커] 분할 라벨 → h2 → 짧은 블루 바 */
+/* 섹션 헤더 */
 .contents_div .gyf-page .gyf-shead{flex-direction:column;align-items:center;gap:14px;padding-bottom:0;border-bottom:0;text-align:center;}
-.contents_div .gyf-page .gyf-shead::after{content:'';display:block;width:32px;height:3px;margin-top:4px;background:transparent;}  /* 선은 숨기고 자리(여백)는 유지 */
+.contents_div .gyf-page .gyf-shead::after{content:'';display:block;width:32px;height:3px;margin-top:4px;background:transparent;}
 .contents_div .gyf-page .gyf-slabel{display:inline-flex;align-items:stretch;height:var(--kick);}
 .contents_div .gyf-page .gyf-slabel .gyf-snum{display:inline-flex;align-items:center;padding:3px 10px 0;background:var(--c-dark);color:var(--c-point);font-size:var(--fs-kicker);letter-spacing:.02em;}
 .contents_div .gyf-page .gyf-slabel .gyf-kicker{border-left:0;}
@@ -451,9 +449,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-shead::after{width:24px;height:2px;margin-top:2px;}
 .contents_div .gyf-page .gyf-slabel .gyf-snum{padding:1px 7px 0;}
 }
-/* 좌측: 블록 소제목(gyf-bhead) · 본문 · 카드 · 팁 — 기존 규칙 유지 */
 
-/* 줄바꿈: 웹은 중앙 문단을 줄 길이 균형 있게, 모바일은 화면 폭에 맞춰 자연스럽게 */
 .contents_div .gyf-page .gyf-intro .gyf-p, .contents_div .gyf-page .gyf-foot-sub{text-wrap:balance;}
 @media (max-width:720px){
 .contents_div .gyf-page .gyf-intro .gyf-p, .contents_div .gyf-page .gyf-foot-sub{text-wrap:pretty;}
@@ -461,17 +457,17 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @container gyfwrap (max-width:600px){
 .contents_div .gyf-page .gyf-intro .gyf-p, .contents_div .gyf-page .gyf-foot-sub{text-wrap:pretty;}
 }
-/* 정보 리스트 값 — 웹에서만 한 단계 작게 (모바일은 --fs-info 14px 그대로) */
+/* 정보 리스트 값 */
 @media (min-width:721px){ .contents_div .gyf-page .gyf-info > li, .contents_div .gyf-page .gyf-info .gyf-flow{font-size:15px;} }
-/* 추천 코스 카드 — 지도 이미지 위, 텍스트 아래 */
+/* 추천 코스 카드 */
 .contents_div .gyf-page .gyf-hcard.gyf-hcard--stack{grid-template-columns:1fr;}
 .contents_div .gyf-page .gyf-hcard--stack > .gyf-fig{height:auto;}
 .contents_div .gyf-page .gyf-hcard--stack > .gyf-fig::before{padding-top:62.5%;}
 @media (max-width:720px){ .contents_div .gyf-page .gyf-hcard--stack > .gyf-fig::before{padding-top:75%;} }
-/* 축제명 — 도형 없이 축제 색 글자로만 구분 */
+/* 축제명 */
 .contents_div .gyf-page .gyf-fname{display:block;margin-bottom:12px;color:var(--fc,var(--c-navy));font-family:'Paperozi','Pretendard',sans-serif;font-size:17px;font-weight:700;letter-spacing:-0.02em;}
 @media (max-width:720px){ .contents_div .gyf-page .gyf-fname{margin-bottom:8px;font-size:15px;} }
-/* 행간 — 웹에서 본문 계열 평균 1.6 (타이틀·라벨·리스트는 기존값 유지, 모바일은 기존값) */
+/* 행간 */
 @media (min-width:721px){
 .contents_div .gyf-page,
 .contents_div .gyf-page .gyf-p,
@@ -484,13 +480,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-val .gyf-flow{line-height:1.5;}
 }
 .contents_div .gyf-page .gyf-ftag.is-gb, .contents_div .gyf-page .gyf-ftag.is-ys{color:var(--fc);}
-/* 교차할인 티켓 — 할인 문구 색 통일, 왼쪽 칸 배경 (비엔날레 먹색 / 섬박람회 블루) */
+/* 교차할인 티켓 */
 .contents_div .gyf-page .gyf-tk .gyf-tk-stub b{color:var(--c-navy);}
 .contents_div .gyf-page .gyf-tk.is-gb .gyf-tk-main{background:var(--c-dark);}
 .contents_div .gyf-page .gyf-tk.is-gb .gyf-tk-from{color:#fff;}
 .contents_div .gyf-page .gyf-tk.is-ys .gyf-tk-main{background:var(--c-ys);}
 .contents_div .gyf-page .gyf-tk.is-ys .gyf-tk-from{color:#fff;}
-/* CTA가 든 카드 — 카드를 한 줄씩 쌓고, 카드 안은 [설명 | 버튼] 가로 배치 */
+/* CTA가 든 카드 */
 .contents_div .gyf-page .gyf-pair:has(.gyf-cell-body > .gyf-cta){grid-template-columns:1fr;}
 .contents_div .gyf-page .gyf-cell-body:has(> .gyf-cta){flex-direction:row;align-items:center;gap:24px;}
 .contents_div .gyf-page .gyf-cell-body:has(> .gyf-cta) > .gyf-cell-txt{flex:1 1 auto;min-width:0;padding-bottom:0;}
@@ -499,30 +495,30 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-cell-body:has(> .gyf-cta){flex-direction:column;align-items:stretch;gap:14px;}
 .contents_div .gyf-page .gyf-cell-body:has(> .gyf-cta) > .gyf-cta{flex:0 0 auto;}
 }
-/* 소제목 앞 마크 — 하이라이터 바 대신 6갈래 별표(애스터리스크), 먹색 */
+/* 소제목 앞 마크 */
 .contents_div .gyf-page .gyf-mark{width:18px;height:18px;border-radius:0;background:var(--c-dark);-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='-50%20-50%20100%20100'%3E%3Cpath%20d='M-12.5%20-50%20L12.5%20-50%20L8.5%200%20L12.5%2050%20L-12.5%2050%20L-8.5%200Z'%20/%3E%3Cpath%20d='M-12.5%20-50%20L12.5%20-50%20L8.5%200%20L12.5%2050%20L-12.5%2050%20L-8.5%200Z'%20transform='rotate(60)'/%3E%3Cpath%20d='M-12.5%20-50%20L12.5%20-50%20L8.5%200%20L12.5%2050%20L-12.5%2050%20L-8.5%200Z'%20transform='rotate(120)'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='-50%20-50%20100%20100'%3E%3Cpath%20d='M-12.5%20-50%20L12.5%20-50%20L8.5%200%20L12.5%2050%20L-12.5%2050%20L-8.5%200Z'%20/%3E%3Cpath%20d='M-12.5%20-50%20L12.5%20-50%20L8.5%200%20L12.5%2050%20L-12.5%2050%20L-8.5%200Z'%20transform='rotate(60)'/%3E%3Cpath%20d='M-12.5%20-50%20L12.5%20-50%20L8.5%200%20L12.5%2050%20L-12.5%2050%20L-8.5%200Z'%20transform='rotate(120)'/%3E%3C/svg%3E") center/contain no-repeat;}
 @media (max-width:720px){ .contents_div .gyf-page .gyf-mark{width:15px;height:15px;} }
-/* 소제목 넘버 배지 — 라임 배경 + 먹색 1px 테두리 */
-.contents_div .gyf-page .gyf-bhead .gyf-num{box-sizing:border-box;background:var(--c-point);border:1px solid var(--c-dark);border-radius:50%;padding:2px 0 0;color:var(--c-navy);}  /* padding-top 2px = 숫자 1px 아래로 */
-/* CTA — 흰 배경 + 먹색 2px 테두리, 화살표 1px 아래 */
+/* 소제목 넘버 배지 */
+.contents_div .gyf-page .gyf-bhead .gyf-num{box-sizing:border-box;background:var(--c-point);border:1px solid var(--c-dark);border-radius:50%;padding:2px 0 0;color:var(--c-navy);}
+/* CTA */
 .contents_div .gyf-page .gyf-cta, .contents_div .gyf-page .gyf-cta--line{background:#fff;color:var(--c-navy);border:2px solid var(--c-dark);}
 .contents_div .gyf-page .gyf-cta-arrow{position:relative;top:1px;}
 @media (hover:hover) and (pointer:fine){
   .contents_div .gyf-page .gyf-cta:hover, .contents_div .gyf-page .gyf-cta--line:hover{background:var(--c-dark);color:#fff;border-color:var(--c-dark);}
 }
-/* CTA — 흰 배경 + 먹색 1px 테두리, 화살표 1px 아래 */
+/* CTA */
 .contents_div .gyf-page .gyf-cta, .contents_div .gyf-page .gyf-cta--line{background:#fff;color:var(--c-navy);border:1px solid var(--c-dark);}
 .contents_div .gyf-page .gyf-cta-arrow{position:relative;top:1px;}
 @media (hover:hover) and (pointer:fine){
   .contents_div .gyf-page .gyf-cta:hover, .contents_div .gyf-page .gyf-cta--line:hover{background:var(--c-dark);color:#fff;}
 }
-/* 섹션3 '호남관광문화주간' 블록부터 — CTA 먹색 배경 */
+/* 섹션3 '호남관광문화주간' 블록부터 */
 .contents_div .gyf-page .gyf-block--dark-cta .gyf-cta{background:var(--c-dark);color:#fff;border-color:var(--c-dark);}
 @media (hover:hover) and (pointer:fine){ .contents_div .gyf-page .gyf-block--dark-cta .gyf-cta:hover{background:var(--c-accent);border-color:var(--c-accent);color:#fff;} }
-/* CTA 화살표 — 폰트 글리프 대신 SVG로 그려 어느 환경에서도 같은 두께 */
+/* CTA 화살표 */
 .contents_div .gyf-page .gyf-cta-arrow{display:inline-block;width:15px;height:15px;font-size:0;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2016%2016%27%20fill=%27none%27%20stroke=%27black%27%20stroke-width=%272.2%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27%3E%3Cpath%20d=%27M2%208h11.5M8.5%203l5%205-5%205%27/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2016%2016%27%20fill=%27none%27%20stroke=%27black%27%20stroke-width=%272.2%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27%3E%3Cpath%20d=%27M2%208h11.5M8.5%203l5%205-5%205%27/%3E%3C/svg%3E") center/contain no-repeat;}
 @media (max-width:720px){ .contents_div .gyf-page .gyf-cta-arrow{width:13px;height:13px;} }
-/* 앵커 내비 — 버튼 안 세로 정렬 보정 */
+/* 앵커 내비 */
 .contents_div .gyf-page .gyf-nav-btn::after{content:'';width:14px;height:14px;font-size:0;background:currentColor;opacity:.6;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2016%2016%27%20fill=%27none%27%20stroke=%27black%27%20stroke-width=%272%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27%3E%3Cpath%20d=%27M8%202.5v11M3.5%209l4.5%204.5L12.5%209%27/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2016%2016%27%20fill=%27none%27%20stroke=%27black%27%20stroke-width=%272%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27%3E%3Cpath%20d=%27M8%202.5v11M3.5%209l4.5%204.5L12.5%209%27/%3E%3C/svg%3E") center/contain no-repeat;}
 .contents_div .gyf-page .gyf-nav-btn b{display:inline-flex;align-items:center;line-height:1;padding-top:var(--nav-b-shift,0);}
 .contents_div .gyf-page .gyf-nav-btn{padding-top:9px;padding-bottom:7px;}
@@ -531,18 +527,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-nav-btn{padding-top:7px;padding-bottom:5px;}
 .contents_div .gyf-page .gyf-nav-btn::after{width:12px;height:12px;top:-0.5px;}
 }
-/* 웹 — 대상지역 카드: 내용 가로 가운데 */
+/* 웹 */
 @media (min-width:721px){
 .contents_div .gyf-page .gyf-regions li{text-align:center;}
 }
 .contents_div .gyf-page .gyf-tip{background:rgba(255,255,255,.6);}
-/* 카드 상단 이미지 — 아래 회색 1px 구분선 (이미지 위에 겹쳐 그려 어떤 이미지·환경에서도 보이게) */
+/* 카드 상단 이미지 */
 .contents_div .gyf-page .gyf-cell > .gyf-fig::after, .contents_div .gyf-page .gyf-eat > .gyf-fig::after{content:'';position:absolute;left:0;right:0;bottom:0;z-index:2;height:1px;background:#D5D5DB;pointer-events:none;}
-/* 본문 속 링크 — 굵기·밑줄 없이 주변 글자 그대로 */
+/* 본문 속 링크 */
 .contents_div .gyf-page .gyf-link.gyf-link--plain{font-weight:inherit;text-decoration:none;}
 .contents_div .gyf-page .gyf-link.gyf-link--plain::after{content:none;display:none;}
 .contents_div .gyf-page .gyf-link.gyf-link--plain:hover, .contents_div .gyf-page .gyf-link.gyf-link--plain:focus-visible{font-weight:700;text-decoration:underline;text-decoration-color:currentColor;text-underline-offset:4px;text-decoration-thickness:1px;}
-/* 인트로 타이틀 — 마우스로 드래그해 선택하는 연출 */
+/* 인트로 타이틀 */
 .contents_div .gyf-page .gyf-intro .gyf-h1 .gyf-drag{position:relative;display:inline-block;padding:0 6px;white-space:nowrap;}
 .contents_div .gyf-page .gyf-drag-hl{position:absolute;inset:0;padding:0 6px;white-space:nowrap;color:#fff;background:linear-gradient(rgba(255,255,255,.22),rgba(255,255,255,.22)) 0 60%/100% 92% no-repeat;clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.65,0,.35,1) .3s;}
 .contents_div .gyf-page .gyf-drag::after{content:'';position:absolute;left:0;top:calc(4% - 1px);bottom:0;width:2px;margin-left:-1px;background:#fff;opacity:0;transition:left 1.1s cubic-bezier(.65,0,.35,1) .3s,opacity .15s .3s;}
@@ -550,21 +546,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-drag.is-on::after{left:100%;opacity:1;animation:gyfCaret 1s steps(1) 1.6s infinite;}
 @keyframes gyfCaret{0%{opacity:1}50%{opacity:0}}
 
-/* ===== [수정] 모바일 본문 — text-wrap:pretty 해제 (전체 점검 결과) ===== */
-/* pretty는 '마지막 줄이 혼자 짧아지지 않게' 앞줄에서 단어를 끌어내린다.
-   글줄이 긴 웹에서는 유효하지만, 200~340px짜리 모바일 칸에서는 첫 줄이
-   30~58px씩 짧아져 '여백이 남는데 왜 넘어가지'로 보인다.
-   전체 텍스트를 360·390·430px에서 켠 경우/끈 경우로 재 본 결과:
-     첫 줄이 길어진 곳 2~6개(+29~58px) · 나빠진 곳 0개 · 줄 수가 늘어난 곳 0개
-   실측 예(390px):
-     검증된 맛집…   209+139 → 265+83   (첫 줄 +56px)
-     양림동으로 떠나는… 105+83 → 134+54 (첫 줄 +29px)
-     고속버스를 이용하면… 222/250/232/139 → 273/199/288/83
-
-   제목(h1~h4)의 text-wrap:balance는 그대로 둔다. 제목은 가운데 정렬이라
-   두 줄 길이가 비슷한 편이 낫고, 실제로 꺼 보면 더 나빠진다
-   (h3 '2026은 호남관광문화주간! 이런 투어는 어때요?' 187+145 → 275+57).
-   대신 마지막 줄이 짧아지는 것은 감수한다 — 첫 줄을 채우는 쪽을 택했다 */
+/* 모바일 본문 */
 @media (max-width:720px){
   .contents_div .gyf-page :where(p,li){text-wrap:wrap;}
 }
@@ -572,12 +554,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page :where(p,li){text-wrap:wrap;}
 }
 
-/* ===== [추가] 코스 약도 — 경로선·핀 등장 연출 ===== */
-/* .gyf-rt-anim은 스크립트가 붙인다 → JS가 안 돌면 선도 핀도 그냥 다 보인다.
-   경로선은 따라 그리지 않고 통째로 한 번에 나타난다(0.26초).
-   번호는 톡 튀어나오고(스케일), 라벨은 살짝 올라오며 따라붙는다.
-   핀은 transform에 위치가 물려 있어 건드리면 안 되므로 opacity만 쓰고,
-   스케일은 안쪽 번호 동그라미에만 건다 */
+/* 코스 약도 */
 .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-route-line{opacity:0;}
 .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-route-line.is-on{opacity:1;transition:opacity .26s ease-out;}
 .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin{opacity:0;}
@@ -598,12 +575,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin .gyf-rpin-txt{opacity:1;transform:none;}
 }
 
-/* ===== [추가] 스크롤 등장 연출 — 섹션 요소가 올라오며 나타남 ===== */
-/* 숨김 상태는 스크립트가 .gyf-anim을 붙여야 켜진다.
-   CSS에 기본으로 숨겨두면 JS가 막힌 환경(구형 브라우저·확장프로그램)에서
-   본문이 영영 안 보이는 사고가 난다. 그래서 '보이는 것'이 기본값이다.
-   애니메이션은 opacity/transform만 건드려 리플로우를 만들지 않는다.
-   세기 조절: 28px(올라오는 거리), .7s(속도) */
+/* 스크롤 등장 연출 */
 .contents_div .gyf-page.gyf-anim .gyf-rise{
   opacity:0;transform:translate3d(0,28px,0);
 }
@@ -611,21 +583,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   opacity:1;transform:translate3d(0,0,0);
   transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
 }
-/* 이미 자리를 잡은 뒤에는 transition을 지워 탭 전환·리사이즈 때 덜컥거리지 않게 한다 */
 .contents_div .gyf-page.gyf-anim .gyf-rise.is-done{transition:none;}
 @media (prefers-reduced-motion: reduce){
   .contents_div .gyf-page.gyf-anim .gyf-rise{opacity:1;transform:none;transition:none;}
 }
 
-/* ===== [수정] 인트로 드래그 연출 — 1회 → 반복 ===== */
-/* 히어로 애니메이션과 시선이 겹쳐 한 번 긋고 끝나면 묻힌다. 계속 돌린다.
-   transition(1회성)을 animation(무한)으로 바꾸고, 화면 안에 있을 때만 돌린다
-   (스크립트가 .is-on을 붙였다 뗀다 — 화면 밖에서 헛도는 것 방지).
-   방향은 언제나 왼쪽→오른쪽 한 방향이다. 되감지 않고 그 자리에서 사라진 뒤 다시 긋는다.
-   한 바퀴 5초: 0.3s 대기 → 1.1s 긋기(좌→우) → 3.0s 커서 3번 깜빡임
-                → 0.5s 유지 → 사라짐 → 반복.
-   속도 조절은 5s를, 긋는 구간은 28%를, 깜빡임 횟수는 38~88% 사이 키프레임을,
-   마지막 유지 시간은 98%를 움직인다 */
+/* 인트로 드래그 연출 */
 .contents_div .gyf-page .gyf-drag.is-on .gyf-drag-hl{
   clip-path:inset(0 100% 0 0);
   transition:none;
@@ -639,22 +602,19 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @keyframes gyfDragHl{
   0%,6%     { clip-path:inset(0 100% 0 0); }
   28%,98%   { clip-path:inset(0 0 0 0); }
-  /* 0.1%(=5ms) 만에 사라진다 — 오른쪽에서 왼쪽으로 되감는 모양이 안 나오게 */
   98.1%,100%{ clip-path:inset(0 100% 0 0); }
 }
 @keyframes gyfDragCaret{
   0%   { left:0;    opacity:0; }
   6%   { left:0;    opacity:1; }
   28%  { left:100%; opacity:1; }
-  /* 커서 깜빡임 3회 (꺼짐 구간 38~48 / 58~68 / 78~88%, 한 번에 0.5초).
-     켜짐·꺼짐을 0.1%씩 붙여 둬야 전체에 걸린 ease 때문에 페이드되지 않고 딱딱 끊긴다 */
   37.9%{ opacity:1; }  38%  { opacity:0; }
   47.9%{ opacity:0; }  48%  { opacity:1; }
   57.9%{ opacity:1; }  58%  { opacity:0; }
   67.9%{ opacity:0; }  68%  { opacity:1; }
   77.9%{ opacity:1; }  78%  { opacity:0; }
   87.9%{ opacity:0; }
-  /* 3번 깜빡인 뒤 커서를 켠 채로 0.5초 유지 → 그 자리에서 사라지고 다시 처음부터 */
+  /* 3번 깜빡인 뒤 커서를 켠 채로 0.5초 유지 */
   88%,98%{ left:100%; opacity:1; }
   98.1%{ left:0;    opacity:0; }
   100% { left:0;    opacity:0; }
@@ -667,19 +627,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-drag.is-on .gyf-drag-hl{animation:none;clip-path:inset(0 0 0 0);}
 .contents_div .gyf-page .gyf-drag.is-on::after{animation:none;opacity:0;}
 }
-/* 섹션1 — 그레인 노이즈 배경 (단색 위에 미세한 입자) */
+/* 섹션1 */
 .contents_div .gyf-page #gyf-s1{background-color:var(--c-sec);background-image:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27220%27%20height=%27220%27%3E%3Cfilter%20id=%27n%27%3E%3CfeTurbulence%20type=%27fractalNoise%27%20baseFrequency=%27.85%27%20numOctaves=%273%27%20stitchTiles=%27stitch%27/%3E%3CfeColorMatrix%20values=%270%200%200%200%200.16%20%200%200%200%200%200.15%20%200%200%200%200%200.19%20%200%200%200%20.3%200%27/%3E%3C/filter%3E%3Crect%20width=%27100%%27%20height=%27100%%27%20filter=%27url(%23n)%27/%3E%3C/svg%3E");background-size:220px 220px;background-repeat:repeat;}
-/* 체험 프로그램 카드 이미지 — cover(박스 채움, 기존 비율 유지) + 경계선 */
+/* 체험 프로그램 카드 이미지 */
 .contents_div .gyf-page .gyf-hcard--fit > .gyf-fig img{object-fit:cover;object-position:center;}
 .contents_div .gyf-page .gyf-hcard--fit > .gyf-fig::after{content:'';position:absolute;top:0;right:0;bottom:0;z-index:2;width:1px;background:var(--c-line);pointer-events:none;}
 @media (max-width:720px){
 .contents_div .gyf-page .gyf-hcard--fit > .gyf-fig::after{top:auto;left:0;width:auto;height:1px;}
 }
-/* 소요시간 등 기본 정보 카드 — 흰 배경으로 밝게 (plain 카드와 통일) */
+/* 소요시간 등 기본 정보 카드 */
 .contents_div .gyf-page .gyf-stats:not(.gyf-stats--plain) .gyf-stat{background:#fff;}
 
-/* ===== DAY1 코스 약도 ===== */
-/* 이미지 원본 비율(1424×1104) 그대로 표시: 고정 비율 박스를 끄고 이미지 높이를 자연스럽게 */
+/* DAY1 코스 약도 */
 .contents_div .gyf-page .gyf-fig.gyf-fig--route{height:auto !important;background:none;}
 .contents_div .gyf-page .gyf-fig.gyf-fig--route::before{content:none !important;display:none !important;padding:0 !important;}
 .contents_div .gyf-page .gyf-fig.gyf-fig--route > img{position:relative !important;inset:auto !important;display:block;width:100% !important;height:auto !important;object-fit:fill !important;}
@@ -703,7 +662,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-rpin-num{width:18px;height:18px;font-size:10px;}
 }
 
-/* ===== 코스 텍스트를 지도 좌측 하단에 세로로 올리기 (넓은 화면에서만) ===== */
+/* 코스 텍스트를 지도 좌측 하단에 세로로 올리기 (넓은 화면에서만) */
 .contents_div .gyf-page .gyf-hcard--route{position:relative;}
 @media (min-width:721px){
   .contents_div .gyf-page .gyf-hcard--route > .gyf-hcard-body{position:absolute;left:0;bottom:0;z-index:3;width:34%;max-width:340px;padding:20px;}
@@ -717,13 +676,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-hcard--route .gyf-flow{padding:12px 14px;font-size:13px;}
 }
 
-/* ===== 추천 코스 — 왼쪽 지도(약 75~80% 폭) + 오른쪽 DAY 탭박스 ===== */
+/* 추천 코스 */
 .contents_div .gyf-page .gyf-route2{display:grid;grid-template-columns:minmax(0,1fr) clamp(206px,25%,290px);grid-template-areas:"map side";gap:0;padding:0;background:#fff;border:1px solid var(--c-line);border-radius:var(--r);overflow:hidden;}
 .contents_div .gyf-page .gyf-route2-maps{grid-area:map;display:grid;align-content:center;min-width:0;}
-/* 두 약도를 같은 칸에 겹쳐 두어 탭을 바꿔도 높이가 변하지 않게 */
 .contents_div .gyf-page .gyf-route2-map{grid-area:1 / 1;min-width:0;}
 .contents_div .gyf-page .gyf-route2-map:not(.is-on){visibility:hidden;pointer-events:none;}
-/* 오른쪽 탭박스 — 지도와 같은 높이로 늘어나 하단 빈 여백이 보이지 않게 */
+/* 오른쪽 탭박스 */
 .contents_div .gyf-page .gyf-route2-side{grid-area:side;display:flex;flex-direction:column;min-width:0;border-left:1px solid var(--c-line);background:#fff;}
 .contents_div .gyf-page .gyf-route2-tabs{flex:0 0 auto;display:flex;}
 .contents_div .gyf-page .gyf-route2-tab{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:13px 6px 11px;box-sizing:border-box;border:0;border-bottom:1px solid var(--c-line);background:var(--c-sec);color:var(--c-sub);cursor:pointer;transition:background .15s,color .15s;}
@@ -741,7 +699,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-route2-panel:not(.is-on){visibility:hidden;pointer-events:none;}
 .contents_div .gyf-page .gyf-route2-ttl{flex:0 0 auto;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--c-line);font-family:'Paperozi','Pretendard',sans-serif;font-size:15px;font-weight:700;line-height:1.3;letter-spacing:-0.02em;color:var(--c-navy);word-break:keep-all;}
 .contents_div .gyf-page .gyf-route2-ttl span{display:block;margin-top:4px;font-family:'Pretendard',sans-serif;font-size:12px;font-weight:600;color:var(--c-sub);}
-/* 코스 단계를 박스 높이에 고르게 펼쳐 남는 여백이 생기지 않게 */
 .contents_div .gyf-page .gyf-route2-panel .gyf-flow{flex:1 1 auto;display:flex;flex-direction:column;font-size:14px;line-height:1.4;}
 .contents_div .gyf-page .gyf-route2-panel .gyf-flow li{display:flex;flex-direction:column;white-space:normal;}
 .contents_div .gyf-page .gyf-route2-panel .gyf-flow li:not(:last-child){flex:1 1 auto;min-height:0;}
@@ -755,7 +712,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-route2 .gyf-rpin-num{width:24px;height:24px;font-size:12px;}
   .contents_div .gyf-page .gyf-route2 .gyf-rpin-txt{font-size:12px;padding:4px 7px 3px;}
 }
-/* 모바일 — 탭박스 위, 지도 아래로 세로 배치 */
+/* 모바일 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-route2{grid-template-columns:1fr;grid-template-areas:"side" "map";gap:0;padding:0;}
   .contents_div .gyf-page .gyf-route2-side{border-left:0;border-bottom:1px solid var(--c-line);}
@@ -764,36 +721,22 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-route2-ttl span{display:inline;margin:0 0 0 6px;}
 }
 
-/* ===== [수정] ① DAY 탭박스를 왼쪽으로 ② 지도 왼쪽 여백 5% 가리기 ===== */
-/* ① 왼쪽 탭박스 + 오른쪽 지도 (칸 순서와 영역 이름만 뒤집음) */
+/* ① DAY 탭박스를 왼쪽으로 ② 지도 왼쪽 여백 5% 가리기 */
 .contents_div .gyf-page .gyf-route2{grid-template-columns:clamp(206px,25%,290px) minmax(0,1fr);grid-template-areas:"side map";}
 .contents_div .gyf-page .gyf-route2-side{border-left:0;border-right:1px solid var(--c-line);}
 
-/* ② 지도 왼쪽을 원본 기준 270px만큼 CSS로만 가림 — 이미지 원본은 절대 자르지 않고, 박스 밖으로 밀어 숨김
-      · 원본 1424px 중 270px 가림 → 보이는 폭 1154px (= 18.96%)
-      · 확대율 1424/1154 = 123.3969%, 왼쪽으로 270/1154 = 23.3969% 밀어넣고 overflow로 감춤
-      · 보이는 비율 1154×1104 (가로:세로 1.05)
-      · 이미지·경로선(svg)·핀을 똑같이 밀어서 핀 위치는 그대로 유지됨
-      · 가릴 px 바꿀 때 (확대율 = 1424/(1424-px), 밀어넣기 = px/(1424-px))
-        200px → 116.3399% / -16.3399%   |   240px → 120.2703% / -20.2703%
-        270px → 123.3969% / -23.3969%   |   300px → 126.6904% / -26.6904% */
 .contents_div .gyf-page .gyf-fig.gyf-fig--route{overflow:hidden;}
 .contents_div .gyf-page .gyf-fig.gyf-fig--route > img{width:123.3969% !important;max-width:none;margin-left:-23.3969%;}
 .contents_div .gyf-page .gyf-fig.gyf-fig--route > .gyf-route-line,
 .contents_div .gyf-page .gyf-fig.gyf-fig--route > .gyf-rpins{left:-23.3969%;right:auto;width:123.3969%;}
 
-/* ③ 모바일(탭박스 위 · 지도 아래)에서는 테두리 정리 */
 @media (max-width:720px){
 .contents_div .gyf-page .gyf-route2{grid-template-columns:1fr;grid-template-areas:"side" "map";}
 .contents_div .gyf-page .gyf-route2-side{border-left:0;border-right:0;border-bottom:1px solid var(--c-line);}
 }
 
-/* ===== [수정] 핀 라벨 방향 — 오른쪽 끝 라벨 잘림 방지 ===== */
-/* 라벨을 번호 '위쪽 + 왼쪽'으로 붙임 (기본=오른쪽, is-left=왼쪽, is-down=아래쪽, is-upleft=위쪽+왼쪽)
-   좌표(left/top)는 그대로 두고 라벨이 붙는 방향만 바꿔서 핀 위치 정확도는 유지 */
+/* 핀 라벨 방향 */
 .contents_div .gyf-page .gyf-rpin.is-upleft{flex-direction:column-reverse;align-items:flex-end;gap:4px;transform:translate(calc(-100% + 14px),calc(-100% + 14px));}
-/* 번호 동그라미는 좌표에 고정한 채, 라벨만 미세 이동
-   --rpin-tx : 좌우(+ 오른쪽) / --rpin-ty : 상하(- 위쪽) — li의 style에서 조절 */
 .contents_div .gyf-page .gyf-rpin .gyf-rpin-txt{position:relative;left:var(--rpin-tx,0px);top:var(--rpin-ty,0px);}
 @media (max-width:900px){
   .contents_div .gyf-page .gyf-rpin.is-upleft{gap:3px;transform:translate(calc(-100% + 11px),calc(-100% + 11px));}
@@ -802,10 +745,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-rpin.is-upleft{transform:translate(-50%,-50%);}
 }
 
-/* ===== [수정] 코스 텍스트 간격 ===== */
-/* 원래는 li가 flex로 늘어나 남는 높이를 나눠 가졌음 → 지도가 세로로 길어지면 줄 간격이 벌어짐
-   ① 화살표 간격을 9px 고정 ② 제목+목록을 한 덩어리로 묶어 세로 가운데 배치
-   → 제목과 목록이 붙어 있고, 남는 여백은 위아래로 고르게 나뉨 */
+/* 코스 텍스트 간격 */
 .contents_div .gyf-page .gyf-route2-panel{justify-content:center;}
 .contents_div .gyf-page .gyf-route2-panel .gyf-flow{flex:0 0 auto;justify-content:flex-start;}
 .contents_div .gyf-page .gyf-route2-panel .gyf-flow li:not(:last-child){flex:0 0 auto;}
@@ -813,48 +753,30 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @media (min-width:721px){
   .contents_div .gyf-page .gyf-route2-panel .gyf-flow li:not(:last-child)::after{margin-top:9px;}
 }
-/* 모바일(탭 위·지도 아래)에서는 박스 높이가 내용만큼이라 가운데 정렬 불필요 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-route2-panel{justify-content:flex-start;}
   .contents_div .gyf-page .gyf-route2-panel .gyf-flow li:not(:last-child)::after{margin:6px 0 6px 1px;}
 }
 
-/* ===== [수정] 제목 아래 실선 — 위아래 여백 각각 +4px ===== */
-/* 웹: 위 10→14px, 아래 12→16px / 모바일: 위 8→12px, 아래 10→14px */
+/* 제목 아래 실선 */
 .contents_div .gyf-page .gyf-route2-ttl{padding-bottom:14px;margin-bottom:16px;}
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-route2-ttl{padding-bottom:12px;margin-bottom:14px;}
 }
 
-/* ===== [수정] 이미지 없는 가로 카드 — 한 칸으로 (남도한바퀴) ===== */
+/* 이미지 없는 가로 카드 */
 .contents_div .gyf-page .gyf-hcard.gyf-hcard--noimg{grid-template-columns:1fr;}
 
-/* ===== [추가] 다섬이 마스코트 — 남도한바퀴 블록 오른쪽에 absolute로 겹치기 ===== */
-/* 원본 506×517(webp). 블록을 기준(position:relative)으로 오른쪽 위에 배치 */
+/* 다섬이 마스코트 */
 .contents_div .gyf-page .gyf-block--mascot{position:relative;}
 .contents_div .gyf-page .gyf-mascot{
-  position:absolute;z-index:2;right:-7px;top:-67px;   /* 왼쪽 8px 추가 이동 */
-  width:30.24%;max-width:217px;height:auto;  /* 기존 28.8%/207px에서 5% 확대 */
+  position:absolute;z-index:2;right:-7px;top:-67px;
+  width:30.24%;max-width:217px;height:auto;
   pointer-events:none;user-select:none;
 }
-/* 카드를 마스코트보다 위로 — 캐릭터 하반신이 카드에 가려지게
-   (배경 흰색은 .gyf-hcard에 있어서 카드 자체를 올려야 가려짐. body만 올리면 배경이 없어 그대로 보임) */
 .contents_div .gyf-page .gyf-block--mascot .gyf-hcard{position:relative;z-index:3;}
 .contents_div .gyf-page .gyf-block--mascot .gyf-hcard-body{position:relative;z-index:4;}
-/* 모바일 — 본문이 폭 전체를 쓰므로 글자와 겹침 방지 위해 숨김 */
-/* 웹·모바일 한 레이아웃 — 마스코트는 항상 블록 오른쪽 위에 겹쳐 세우고,
-   폭이 줄면 캐릭터·간격·글줄이 함께 줄어든다 (브레이크포인트로 배치를 갈아타지 않는다)
-   · 크기   : 블록 폭의 30.24% (최대 217px) → 폭에 비례해 축소
-   · 세로위치: top을 vw로 묶어 좁아질수록 덜 올라오게 (-67px ~ -18px)
-   · 글줄   : 소제목·리드문에 '마스코트 폭 + 3%' 만큼 오른쪽 여백을 줘서
-              글자가 캐릭터 밑으로 들어가지 않고 그 앞에서 줄바꿈된다 */
-/* absolute 겹치기 대신 그리드 2열 — 브레이크포인트 없이 폭에 따라 전부 비례 축소
-     [소제목 | 마스코트]
-     [리드문 | 마스코트]
-     [    카드 전체 폭    ]
-   · 캐릭터 = 오른쪽 열(폭의 30.24%)  · 간격 = column-gap 3%  → 둘 다 폭에 비례
-   · 글줄은 왼쪽 열 안에서 폭에 맞춰 자연스럽게 줄바꿈 (캐릭터 밑으로 들어가지 않음)
-   · margin-bottom 음수도 %라, 카드가 하반신을 덮는 양까지 비례한다 */
+/* 모바일 */
 .contents_div .gyf-page .gyf-block.gyf-block--mascot{
   display:grid;
   grid-template-columns:minmax(0,1fr) 30.24%;
@@ -869,40 +791,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   grid-area:fig;align-self:end;
   position:relative;top:auto;right:auto;z-index:1;
   width:100%;max-width:none;height:auto;
-  margin:0 0 -30%;   /* %는 마스코트 열 폭 기준 = 캐릭터 높이의 약 30%를 카드가 덮는다 */
+  margin:0 0 -30%;
 }
-/* 이 블록에서는 수동 줄바꿈 대신 폭에 맞춰 자연스럽게 흘리게 둔다 */
 .contents_div .gyf-page .gyf-block.gyf-block--mascot > .gyf-p > br{display:none;}
 
-/* ===== [수정] 다섬이 마스코트 — 크기 · 텍스트와의 간격 · 오른쪽 여백 ===== */
-/* 세 가지를 한 벌로 조정한다. 블록 폭은 420px 기기에서 358px뿐이라
-   [글줄 칸 + 간격 + 캐릭터 + 오른쪽 여백]이 서로 폭을 나눠 쓰는 관계다.
-
-   ① 텍스트↔캐릭터 간격 — 폭이 줄수록 같이 좁아진다
-      600px 16px(=3%) → 480px 11px → 420px 8px → 390px 6px → 360px 이하 5px.
-      여기서 아낀 폭을 캐릭터 쪽으로 넘긴다.
-   ② 캐릭터 열 — 600px 이상은 기존 30.24% 그대로 두고 그 아래에서만 넓힌다.
-      세 번째 항 calc(97% - 220px)은 글줄 칸이 220px 밑으로 내려가지 않게 막는 상한.
-      이게 없으면 360px에서 소제목이 2줄로 깨진다.
-   ③ 오른쪽 여백 — 캐릭터를 왼쪽으로 당겨 만든다. 폭을 줄이면 그리드 열 왼쪽에
-      붙으므로 오른쪽에 그만큼 빈칸이 생긴다. 그림 자체의 투명 여백 2.5%가
-      더해져 실제 여백은 7~8px. 카드 오른쪽 선 밖으로 나가지 않는다.
-
-   결과(그림 실폭 / 카드선 안쪽 여백 / 열 간격):
-     360px  86→81 / 2→7 / 9→5      390px  94→90 / 2→7 / 10→6  (리드문 5줄→4줄)
-     420px 103→106 / 3→8 / 11→8    480px 120→122 / 3→8 / 13→11
-     600px 이상은 사실상 그대로. 821px 웹은 완전히 동일.
-
-   조절: 캐릭터를 더 키우려면 27.25%의 +19px를, 오른쪽 여백은 5px를,
-        간격은 4.625cqi의 -10.17px를 움직인다. 셋 다 같은 폭을 나눠 쓰므로
-        하나를 키우면 나머지가 줄어든다 */
+/* 다섬이 마스코트 */
 .contents_div .gyf-page .gyf-block.gyf-block--mascot{
   column-gap:clamp(5px, calc(4.625cqi - 10.17px), 3%);
-  /* ④ 375~428px 구간만 캐릭터 +11px(약 +10%) — 이 폭대에서 텍스트와의 간격에
-        여유가 있어 캐릭터 쪽으로 넘긴다. 아래위 끝은 경사로 이어 붙여 단차를 없앴다
-        (369px에서 0 → 375~428px에서 11px → 442px에서 다시 0).
-        구간을 옮기려면 337/343·396/410(래퍼 폭 기준, 화면폭 −32px)을,
-        키우는 양은 11px과 경사 계수 1.83·0.786을 함께 조정한다 */
   grid-template-columns:minmax(0,1fr)
     calc(
       max(30.24%, min(217px, calc(27.25% + 19px), calc(97% - 220px)))
@@ -911,34 +806,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 .contents_div .gyf-page .gyf-block.gyf-block--mascot > .gyf-mascot{
   width:calc(100% - clamp(0px, (568px - 100cqi) / 24, 5px));
-  /* 위로 올리는 양 — 웹의 10px을 캐릭터 높이 대비 비율로 환산해 고정한다.
-     821px 웹에서 캐릭터 높이가 212px이므로 10 ÷ 212 = 4.7%.
-     px로 두면 캐릭터가 작아지는 모바일에서 상대적으로 더 많이 올라가
-     카드 위로 드러나는 비율이 웹 82% → 360px 92%까지 벌어졌다.
-     %는 요소 자기 높이 기준이라 폭이 줄면 올리는 양도 같이 줄어든다.
-     결과(카드 위로 드러나는 비율): 웹 82.3% 유지, 420px 86.6%→82.4%, 360px 91.8%→84.7%.
-     transform이라 레이아웃에는 영향이 없다 — 행 높이·카드 위치·블록 높이 모두 그대로.
-     더 올리려면 4.7%를 키운다 */
   transform:translateY(-4.7%);
 }
 
-/* ===== [수정] 모바일 좌우 여백 축소 — 줄바꿈이 일찍 일어나던 문제 ===== */
-/* 원인은 줄바꿈 규칙이 아니라 글줄 칸 폭이었다. 390px 기기에서
-   contents_div 16px + 섹션 15px = 한쪽 31px(7.9%)을 여백으로 쓰고 있었다.
-   한국어 어절 한 덩어리가 4~5자 ≈ 53~66px이라, 칸이 298px이면
-   마지막 어절이 3~5px 차이로 못 들어가 그대로 다음 줄로 밀린다.
-   오른쪽에 50px 넘는 빈칸이 남는데도 줄이 넘어가는 이유.
-
-   제작요건의 좌우 여백 기준은 clamp(16px, 6.25%, 50px)이고,
-   390px에서 6.25%는 24px다. 즉 31px은 기준보다 넓게 잡혀 있었다.
-   섹션 패딩을 폭에 따라 8~15px로 줄여 기준선에 맞춘다
-   (390px 한쪽 24.6px / 480px 26.8px / 720px 31px — 태블릿은 그대로).
-
-   결과(390px):
-     교통 팁 문단   6줄 → 5줄, 줄 채움 83~99% → 87~98%
-     비엔날레 카드  8줄 → 7줄, 칸 172 → 180px
-   word-break:keep-all과 text-wrap:pretty는 건드리지 않았다.
-   pretty를 끄면 마지막 줄에 두 글자만 남는 고아줄이 생긴다(실측 확인) */
+/* 모바일 좌우 여백 축소 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-sec{
     padding-left:clamp(8px, 2.4%, 15px);
@@ -952,25 +823,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 약도 핀 라벨 — 모바일에서도 보이게 + 잘림 정리 ===== */
-/* 587행에서 480px 이하는 .gyf-rpin-txt{display:none}으로 라벨을 통째로 감추고
-   번호 동그라미만 남겨뒀다. 실측해 보니 칸이 184~254px이라 10px 라벨은 충분히 들어간다.
-   그대로 켜면 아래가 어긋나므로 함께 정리한다. 721px 이상 웹은 손대지 않는다.
-
-   ① 미세 오프셋 — li의 style에 박힌 --rpin-tx/ty는 웹 지도 기준 값이다.
-      모바일은 지도를 170%로 확대·크롭하므로 그대로 쓰면 라벨이 밖으로 밀린다
-      (DAY1 4번 '국립아시아문화전당' tx:52px → 오른쪽 잘림). 0으로 초기화한다.
-      인라인 style을 덮어야 해서 !important가 필요하다.
-   ② DAY2 방향 — 여수 지도는 핀이 왼쪽에 몰려 크롭돼 is-left 라벨 4개가 전부
-      왼쪽으로 잘렸다(최대 65px). 이 지도에서만 오른쪽 붙임으로 뒤집는다.
-   ③ 긴 라벨 — '해상케이블카 자산정류장'은 한 줄로 122px이라 좁은 칸에서 넘친다.
-      max-width + 줄바꿈 허용으로 두 줄이 되게 한다(720px 이하 118px / 480px 이하 105px).
-   ④ 위치(480px 이하) — 라벨을 숨길 때 핀을 좌표 정중앙(translate(-50%,-50%))에 맞춰뒀다.
-      라벨이 돌아오면 방향 클래스(기본=오른쪽 / is-left / is-down / is-upleft)가
-      다시 기준이 되어야 하므로 900px 이하 값에 맞춰 되돌린다.
-
-   실측 검증: 360·390·430·479·481·500·560·600·660·720·721·821px × DAY1·DAY2
-   전부 지도 안에 들어옴. 글자 10px은 제작요건의 하한선이라 더 줄이지 않는다 */
+/* 약도 핀 라벨 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-route2 .gyf-rpin{--rpin-tx:0px !important;--rpin-ty:0px !important;}
 }
@@ -986,11 +839,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-rpin-num{width:20px !important;height:20px !important;font-size:10px !important;}
 }
 
-/* ===== [수정] 이용방법 3단계 — 결과 문구에 형광펜 (웹·모바일 동일) ===== */
-/* 카드 배경색은 빼고 글자에만 긋는다. 색은 섹션 넘버링 배지와 같은 --c-point(#E2FF1F).
-   글자 아래 45%만 덮는 그라데이션이라 블록이 아니라 마커로 그은 것처럼 보인다.
-   굵기 조절: 55%를 낮추면 띠가 두꺼워진다(45% → 글자 절반 이상).
-   box-decoration-break:clone — 줄바꿈으로 두 줄이 돼도 양쪽 끝 여백이 유지된다 */
+/* 이용방법 3단계 */
 .contents_div .gyf-page .gyf-hl{
   background-image:linear-gradient(transparent 55%, var(--c-point) 55%);
   padding:0 2px;
@@ -998,12 +847,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
           box-decoration-break:clone;
 }
 
-/* ===== [수정] 이용방법 3단계 — 모바일에도 웹처럼 화살표 ===== */
-/* 웹(721px~)은 카드가 가로 3열이라 카드 사이에 › 를 넣었다(887행).
-   모바일은 세로 1열이라 같은 화살표를 아래 방향(∨)으로 카드 사이에 세운다.
-   카드 간격이 6px이라 화살표가 들어갈 자리가 없어 22px로 넓혔다
-   (화살표 12px + 위아래 5px씩). 마지막 카드 뒤에는 붙이지 않는다.
-   위치를 숫자 배지 아래로 옮기려면 left:50%/margin-left:-6px를 left:24px으로 바꾼다 */
+/* 이용방법 3단계 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-steps{gap:22px;}
   .contents_div .gyf-page .gyf-steps li{position:relative;}
@@ -1027,13 +871,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [추가] 섹션1 — '세계적인 명성의 축제'부터 배경 밝게 (짧은 구간에서 전환) ===== */
-/* 바탕색(#F6F6F7→#fff)만으로는 차이가 3%뿐이라 눈에 안 보임 → 그레인 노이즈도 같이 옅게 함
-   ① 섹션 배경 = 색 그라데이션  ② ::before = 노이즈 레이어(mask로 아래쪽만 옅게)
-   ::before는 z-index:-1 (배경 위·본문 아래). #gyf-s1에 z-index:0이 있어야 -1이 먹음
-   전환 구간은 28%~44% — 두 숫자를 좁히면 경계가 더 뚜렷, 낮추면 더 위에서 시작
-   아래쪽 노이즈 남기는 양은 mask의 .45 (1 = 위쪽과 동일, 0 = 완전 제거)
-   더 어둡게: .45를 .6~.7로 / 더 밝게: .3으로 */
+/* 섹션1 */
 .contents_div .gyf-page #gyf-s1{
   position:relative;z-index:0;
   background-color:#FAFAFA;
@@ -1048,8 +886,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
           mask-image:linear-gradient(to bottom, #000 28%, rgba(0,0,0,.45) 44%);
 }
 
-/* ===== [수정] 교차할인 티켓 — 두 장 디자인 통일 ===== */
-/* 왼쪽 칸(제시 문구)은 두 장 모두 먹색 배경 + 흰 글씨, 가로·세로 중앙 정렬 */
+/* 교차할인 티켓 */
 .contents_div .gyf-page .gyf-tk.is-gb .gyf-tk-main,
 .contents_div .gyf-page .gyf-tk.is-ys .gyf-tk-main{
   background:var(--c-dark);
@@ -1060,20 +897,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   color:#fff;
   align-items:center;justify-content:center;text-align:center;
 }
-/* '비엔날레'·'섬박람회'만 배경 컬러 캡슐 (상하 패딩 합 10px, 좌우 8px) — 폰트 2px 축소 */
 .contents_div .gyf-page .gyf-tk .gyf-tk-stub span{
   display:inline-flex;align-items:center;justify-content:center;
   box-sizing:border-box;
-  padding:4px 8px 6px;   /* 아래 2px 더 = Paperlogy 글자를 캡슐 중앙으로 올림 */
+  padding:4px 8px 6px;
   border-radius:4px;color:#fff;
   font-size:calc(var(--fs-h4) - 4px);font-weight:400;line-height:1;
 }
 .contents_div .gyf-page .gyf-tk.is-gb .gyf-tk-stub span{background:var(--c-dark);}
 .contents_div .gyf-page .gyf-tk.is-ys .gyf-tk-stub span{background:var(--c-ys);}
-/* 캡슐과 '30% 할인'을 가운데 정렬 + 사이 간격 3px 추가(4 → 7) */
 .contents_div .gyf-page .gyf-tk .gyf-tk-stub{gap:7px;align-items:center;text-align:center;}
 
-/* ===== [수정] 이용방법 3단계 — 카드 폭 축소 + 사이에 › 화살표 (웹 전용) ===== */
+/* 이용방법 3단계 */
 @media (min-width:721px){
   .contents_div .gyf-page .gyf-steps{gap:30px;}
   .contents_div .gyf-page .gyf-steps li{position:relative;}
@@ -1086,23 +921,23 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 섹션 헤더 — 웹에서만 하단 여백 +5px (36 → 41) ===== */
+/* 섹션 헤더 */
 @media (min-width:721px){
   .contents_div .gyf-page .gyf-shead{margin-bottom:calc(var(--headgap) + 5px);}
 }
 
-/* ===== [수정] h2 — 웹(821px~)에서만 폰트 2px 업 (30 → 32) ===== */
+/* h2 */
 @media (min-width:821px){
   .contents_div .gyf-page{--fs-h2:32px;}
 }
-/* 검은 칸 비율 축소 — 티켓 본체 33%(모바일 34%), 좌우 패딩도 함께 조정 */
+/* 검은 칸 비율 축소 */
 .contents_div .gyf-page .gyf-tk{--main:33%;}
 .contents_div .gyf-page .gyf-tk-main{padding:18px 14px;}
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-tk{--main:34%;}
   .contents_div .gyf-page .gyf-tk-main{padding:14px 12px;}
 }
-/* 절취선 — 배경색과 같은 3px 점선, 끝은 둥글게(펀칭처럼). border로는 둥근 끝이 안 되므로 SVG 타일 반복 */
+/* 절취선 */
 .contents_div .gyf-page .gyf-tk-stub::before{
   left:-1.5px;width:3px;border-left:0;
   background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='3'%20height='10'%20viewBox='0%200%203%2010'%3E%3Cline%20x1='1.5'%20y1='3'%20x2='1.5'%20y2='7'%20stroke='%23EAEAED'%20stroke-width='3'%20stroke-linecap='round'/%3E%3C/svg%3E");
@@ -1111,16 +946,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   background-size:3px 10px;
 }
 
-/* ===== [수정] 02 하나만 즐기면 손해 — 바로가기 버튼 블랙 테마 ===== */
+/* 02 하나만 즐기면 손해 */
 .contents_div .gyf-page .gyf-s2 .gyf-cta{background:var(--c-dark);color:#fff;border-color:var(--c-dark);}
 @media (hover:hover) and (pointer:fine){
   .contents_div .gyf-page .gyf-s2 .gyf-cta:hover{background:#fff;color:var(--c-navy);border-color:var(--c-dark);}
 }
 
-/* ===== [수정] 광주비엔날레 주변 맛집 — 이미지 출처 표기를 사진 우측 하단으로 ===== */
-/* .gyf-src를 .gyf-fig 안으로 옮겨 사진 위에 얹는다(.gyf-fig에 position:relative·overflow:hidden 이미 있음)
-   사진이 밝을 수도 어두울 수도 있어 반투명 먹색 캡슐 + 흰 글씨로 가독성을 확보한다
-   z-index:3 — .gyf-eat > .gyf-fig::after(하단 1px 선, z-index:2) 위 */
+/* 광주비엔날레 주변 맛집 */
 .contents_div .gyf-page .gyf-eat .gyf-fig .gyf-src{
   position:absolute;z-index:3;right:8px;bottom:8px;
   max-width:calc(100% - 16px);
@@ -1140,42 +972,20 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 04 섹션 — h3 블록 사이사이 구분 실선 ===== */
-/* 블록마다 클래스를 붙이는 방식(.gyf-block--line)에서 섹션 스코프로 바꿨다.
-   블록이 늘거나 순서가 바뀌어도 h3 경계마다 자동으로 선이 들어간다.
-   여백은 같은 토큰(--row: 웹 34 / 모바일 26)을 margin-top(선 위)·padding-top(선 아래)에
-   각각 걸어 선을 기준으로 정확히 대칭이다. 01 항목 구분선과 같은 리듬 */
+/* 04 섹션 */
 .contents_div .gyf-page #gyf-s4 .gyf-block + .gyf-block{
   margin-top:var(--row);
   padding-top:var(--row);
   border-top-width:1px;
-  border-top-style:solid;   /* 색은 아래 "섹션별 실선 컬러 바꾸기"에서 지정 */
+  border-top-style:solid;
 }
 
-/* ===== 섹션별 배경색 바꾸기 ===== */
-/* 무채색만 쓴다. #fff는 쓰지 않고 가장 밝은 단계가 #FAFAFA.
+/* 섹션별 배경색 바꾸기 */
+.contents_div .gyf-page #gyf-s2{background:#ededef;}
+.contents_div .gyf-page #gyf-s3{background:#f4f4f4;}
+.contents_div .gyf-page #gyf-s4{background:#eaeaec;}
 
-     구간   색        L*     Δ앞 구간
-     내비   #2A2731   16.3
-     01     #FAFAFA   98.3    82.0
-     02     #ededef   93.8     4.5
-     03     #f4f4f4   96.2     2.4
-     04     #eaeaec   92.7     3.5
-     푸터   #2A2731   16.3    76.4
-
-   인접 구간 ΔL*가 3 안팎이면 나란히 놓고 봐야 구분되는 정도다. 구분을 더 주려면
-   네 값의 간격을 벌려야 한다(Δ10 이상). 어둡게 갈 때 한계는 본문 #3B3A42의 대비 4.5:1로,
-   배경이 L* 69(#A8A8B0) 아래로 내려가면 글씨를 흰색으로 뒤집어야 한다 */
-.contents_div .gyf-page #gyf-s2{background:#ededef;}   /* 02 1+1의 즐거움 */
-.contents_div .gyf-page #gyf-s3{background:#f4f4f4;}   /* 03 추천 코스 */
-.contents_div .gyf-page #gyf-s4{background:#eaeaec;}   /* 04 먹는 재미 */
-
-/* ===== [추가] 02 · 04 섹션 그레인 노이즈 ===== */
-/* 01(#gyf-s1)과 같은 SVG feTurbulence 타일을 쓴다. 01은 히어로에서 넘어오는 구간이라
-   mask로 아래쪽을 옅게 빼지만, 02·04는 밴드 전체에 균일하게 깐다.
-   위 배경색 규칙이 background 단축 속성이므로 이 규칙이 뒤에 와야 한다(단축 → 개별 순서).
-   ::before 오버레이가 아니라 background-image 레이어라 z-index·position을 건드리지 않는다.
-   입자가 진하면 baseFrequency='.85'의 feColorMatrix 알파 .3을 낮춘다 */
+/* 02 · 04 섹션 그레인 노이즈 */
 .contents_div .gyf-page #gyf-s2,
 .contents_div .gyf-page #gyf-s4{
   background-image:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27220%27%20height=%27220%27%3E%3Cfilter%20id=%27n%27%3E%3CfeTurbulence%20type=%27fractalNoise%27%20baseFrequency=%27.85%27%20numOctaves=%273%27%20stitchTiles=%27stitch%27/%3E%3CfeColorMatrix%20values=%270%200%200%200%200.16%20%200%200%200%200%200.15%20%200%200%200%200%200.19%20%200%200%200%20.3%200%27/%3E%3C/filter%3E%3Crect%20width=%27100%%27%20height=%27100%%27%20filter=%27url(%23n)%27/%3E%3C/svg%3E");
@@ -1183,54 +993,30 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   background-repeat:repeat;
 }
 
-/* ===== 섹션별 실선 컬러 바꾸기 ===== */
-/* 섹션 구분 실선 3개의 색을 여기 모았다. 색은 이 세 줄에서만 고친다.
-   (굵기 1px과 위아래 간격은 각 규칙 원위치에 그대로 둠 — 색과 별개 사안이라 섞지 않았다)
+/* 섹션별 실선 컬러 바꾸기 */
+.contents_div .gyf-page .gyf-s1 .gyf-row + .gyf-row{border-top-color:#CFCFD5;}
+.contents_div .gyf-page #gyf-s2 .gyf-row + .gyf-row{border-top-color:#C5C5CC;}
+.contents_div .gyf-page #gyf-s4 .gyf-block + .gyf-block{border-top-color:#c2c2ca;}
 
-     선           배경                   색        Δ배경(L*)
-     01 항목 구분  #FAFAFA (L* 98.3)  →  #CFCFD5    15.0
-     02 항목 구분  #ededef (L* 93.8)  →  #C5C5CC    14.1
-     04 블록 구분  #eaeaec (L* 92.7)  →  #CACAD1    11.2
-
-   배경보다 ΔL* 10~15 진한 값이 기준. 값을 낮추면 진해지고, 높이면 연해진다.
-   Δ6 아래로 내려가면 배경에 묻혀 선이 사라진다.
-   03은 블록 사이 실선을 쓰지 않는다 — 카드 테두리(#94939E)로 구분한다 */
-.contents_div .gyf-page .gyf-s1 .gyf-row + .gyf-row{border-top-color:#CFCFD5;}     /* 01 평행이론 */
-.contents_div .gyf-page #gyf-s2 .gyf-row + .gyf-row{border-top-color:#C5C5CC;}     /* 02 1+1의 즐거움 */
-.contents_div .gyf-page #gyf-s4 .gyf-block + .gyf-block{border-top-color:#c2c2ca;}  /* 04 먹는 재미 */
-
-/* ===== [수정] 03 섹션 — 배경 위 박스 전부 "흰 채움 + 진한 테두리"로 통일 ===== */
-/* 03은 배경이 네 섹션 중 가장 밝다(#f4f4f4, L* 96.2).
-   방식은 두 가지 중 하나를 골라야 하는데 — 카드를 배경보다 어둡게 / 테두리를 진하게 —
-   테두리 쪽을 택했다. 02·04는 배경이 카드보다 어두워 "흰 박스 = 카드"로 읽히는데,
-   03만 카드를 어둡게 하면 섹션마다 카드 규칙이 뒤집혀 읽는 사람이 헷갈린다.
-
-   테두리 #C8C8CF = 배경과 ΔL* 15.4 / 흰 채움과 19.2. 1px 선이 안티에일리어싱으로
-   옅어지는 것까지 감안한 값이다. 카드 안쪽 구분선(var(--c-line))은 흰 바닥 위라 그대로 둔다 */
+/* 03 섹션 */
 .contents_div .gyf-page #gyf-s3 .gyf-hcard,
 .contents_div .gyf-page #gyf-s3 .gyf-route2{border-color:#C8C8CF;}
 
-/* 아래 셋은 채움이 배경과 ΔL* 2 안팎이라 사실상 안 보이던 박스들 → 흰 채움 + 같은 테두리 */
-.contents_div .gyf-page #gyf-s3 .gyf-stats .gyf-stat{background:#fff;border:1px solid #C8C8CF;}   /* 테두리 자체가 없었음 */
-.contents_div .gyf-page #gyf-s3 .gyf-checks li{background:#fff;border:1px solid #C8C8CF;}          /* #F1F1F3 → ΔL* 1.7 */
-.contents_div .gyf-page #gyf-s3 .gyf-tip{background:#fff;border:1px solid #C8C8CF;}                /* 반투명 흰색 → ΔL* 2 */
+.contents_div .gyf-page #gyf-s3 .gyf-stats .gyf-stat{background:#fff;border:1px solid #C8C8CF;}
+.contents_div .gyf-page #gyf-s3 .gyf-checks li{background:#fff;border:1px solid #C8C8CF;}
+.contents_div .gyf-page #gyf-s3 .gyf-tip{background:#fff;border:1px solid #C8C8CF;}
 
-/* ===== [수정] 캡슐 안 텍스트 세로 중앙 정렬 — 폰트 메트릭 보정 ===== */
-/* 교차할인 티켓 캡슐: padding이 위 4 / 아래 6이라 글자가 1px 위로 떠 있었다.
-   캡슐 높이(25px)는 그대로 두고 상하를 5/5로 맞춰 잉크 여백을 대칭으로 */
+/* 캡슐 안 텍스트 세로 중앙 정렬 */
 .contents_div .gyf-page .gyf-tk .gyf-tk-stub span{padding:5px 8px;}
 
-/* ===== [수정] 정보 카드 작은 라벨 — 값과 한눈에 구분되게 더 연하게 ===== */
-/* 700 → 500, 색도 한 단계 연하게. 라벨(여행기간·지원내용)과 본값의 위계를 벌린다 */
+/* 정보 카드 작은 라벨 */
+/* 700 */
 .contents_div .gyf-page .gyf-stat-k{font-weight:500;color:#78777F;}
 
-/* ===== [수정] 출처 표기 — 페이지 전체 기본 두께(400)로 고정 ===== */
-/* CMS 기본 스타일이 p를 굵게 잡는 환경에서도 같은 두께가 되도록 명시 */
+/* 출처 표기 */
 .contents_div .gyf-page .gyf-src{font-weight:400;}
 
-/* ===== [수정] 체험 프로그램 카드 이미지 — 출처 표기(사진 우측 하단) ===== */
-/* 맛집 카드(.gyf-eat)와 같은 규칙: 반투명 먹색 캡슐 + 흰 글씨.
-   z-index:3 — .gyf-hcard--fit > .gyf-fig::after(구분선, z-index:2) 위 */
+/* 체험 프로그램 카드 이미지 */
 .contents_div .gyf-page .gyf-hcard > .gyf-fig .gyf-src{
   position:absolute;z-index:3;right:8px;bottom:8px;
   max-width:calc(100% - 16px);
@@ -1250,9 +1036,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [추가] 포스터 확대 보기 — 확대 아이콘 + 라이트박스 ===== */
-/* 버튼은 사진 우측 상단(출처 표기는 우측 하단이라 겹치지 않는다).
-   z-index:4 — .gyf-fig::after(구분선 2) · .gyf-src(3) 위 */
+/* 포스터 확대 보기 */
 .contents_div .gyf-page .gyf-fig--zoom{cursor:zoom-in;}
 .contents_div .gyf-page .gyf-fig--zoom > img{cursor:zoom-in;}
 .contents_div .gyf-page .gyf-zoom{
@@ -1280,9 +1064,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-zoom::before{-webkit-mask-size:16px 16px;mask-size:16px 16px;}
 }
 
-/* ===== [수정] 교차할인 티켓 먹색 칸 — 미세 그라데이션 + 옅은 노이즈 ===== */
-/* 단색 먹색이던 왼쪽 칸에 (1)옅은 노이즈 (2)좌상단 하이라이트 (3)대각 그라데이션을 겹친다.
-   가장 밝은 지점도 #343040 수준이라 흰 글씨 대비는 그대로 유지된다 */
+/* 교차할인 티켓 먹색 칸 */
 .contents_div .gyf-page .gyf-tk.is-gb .gyf-tk-main,
 .contents_div .gyf-page .gyf-tk.is-ys .gyf-tk-main{
   background-color:var(--c-dark);
@@ -1295,13 +1077,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   background-position:0 0, 0 0, 0 0;
 }
 
-/* ===== [수정] 섹션 카드 테두리 — 배경보다 확실히 진한 선으로 페이지 전체 통일 ===== */
-/* 기존 --c-line(#E2E2E6)은 배경(#F6F6F7/#F1F1F3)과 ΔL*가 3~4밖에 안 돼 카드 경계가 보이지 않았다.
-   03 섹션에서만 쓰던 #C8C8CF(배경과 ΔL* 15.4 / 흰 채움과 19.2)를 카드 외곽선 토큰으로 승격.
-   카드 '안쪽' 실선(정보 구분선·탭 경계)은 기존 --c-line 그대로 둬서 위계를 유지한다 */
+/* 섹션 카드 테두리 */
 .contents_div .gyf-page{--c-cline:#94939E;}
 
-/* 이미 테두리가 있던 카드 — 색만 진하게 */
+/* 이미 테두리가 있던 카드 */
 .contents_div .gyf-page .gyf-cell,
 .contents_div .gyf-page .gyf-hcard,
 .contents_div .gyf-page .gyf-eat,
@@ -1315,40 +1094,32 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page #gyf-s3 .gyf-checks li,
 .contents_div .gyf-page #gyf-s3 .gyf-tip{border-color:var(--c-cline);}
 
-/* 테두리가 아예 없던 박스 — 선을 새로 넣는다 */
+/* 테두리가 아예 없던 박스 */
 .contents_div .gyf-page .gyf-stat,
 .contents_div .gyf-page .gyf-checks li,
 .contents_div .gyf-page .gyf-tip{border:1px solid var(--c-cline);}
 
-/* 사진이 들어간 카드 — 사진과 본문 사이 경계도 같은 선으로 (허전함의 주범) */
+/* 사진이 들어간 카드 */
 .contents_div .gyf-page .gyf-cell > .gyf-fig::after,
 .contents_div .gyf-page .gyf-eat > .gyf-fig::after,
 .contents_div .gyf-page .gyf-hcard--fit > .gyf-fig::after{background:var(--c-cline);}
 
-/* 교차할인 티켓 — 홈(펀칭)까지 따라가는 외곽선이라 drop-shadow로 그린다 */
+/* 교차할인 티켓 */
 .contents_div .gyf-page .gyf-swap{
-  /* 마스크로 홈을 뚫은 도형이라 border를 못 쓴다. drop-shadow 4겹으로 외곽선을 그리는데
-     모서리·곡선에서 두 겹이 겹쳐 1px보다 굵어 보이므로 카드 테두리보다 한 단계 연한 값을 쓴다 */
   filter:drop-shadow(1px 0 0 #A9A8B2) drop-shadow(-1px 0 0 #A9A8B2)
          drop-shadow(0 1px 0 #A9A8B2) drop-shadow(0 -1px 0 #A9A8B2)
          drop-shadow(0 6px 10px rgba(42,39,49,.08));
 }
 
-/* ===== [수정] 섹션 04 '먹는 재미' 카드 테두리 — 이 섹션 전용 색 ===== */
-/*  ↓ 이 값(#94939E)은 04 섹션 카드에만 쓴다. 공용 토큰(--c-cline)을 일부러 안 쓴 것.
-    여기만 고치면 04 섹션 맛집·안내 카드 테두리만 바뀌고,
-    다른 섹션 카드 / 교차할인 티켓 외곽선 / 사진 경계선은 전혀 영향받지 않는다.
-    (#gyf-s4 id 선택자라 위의 공용 규칙보다 우선한다)                                 */
+/* 섹션 04 '먹는 재미' 카드 테두리 */
 .contents_div .gyf-page #gyf-s4 .gyf-eat,
-.contents_div .gyf-page #gyf-s4 .gyf-cell{border-color:#94939E;}                 /* 카드 바깥선 */
+.contents_div .gyf-page #gyf-s4 .gyf-cell{border-color:#94939E;}
 .contents_div .gyf-page #gyf-s4 .gyf-eat > .gyf-fig::after,
-.contents_div .gyf-page #gyf-s4 .gyf-cell > .gyf-fig::after{background:#94939E;} /* 사진 아래 경계선 */
+.contents_div .gyf-page #gyf-s4 .gyf-cell > .gyf-fig::after{background:#94939E;}
 
-/* ===== [수정] 코스 흐름 화살표 — 폰트 글리프(→ ↓) 대신 SVG로 그린다 ===== */
-/* Paperozi에 화살표 글리프가 없어 기기마다 다른 폰트로 대체되면서
-   두께·크기·위치가 제각각으로 보였다. CTA 화살표와 같은 방식(마스크 SVG)으로 통일 */
+/* 코스 흐름 화살표 */
 
-/* 가로형 — 한 줄로 이어지는 코스 */
+/* 가로형 */
 .contents_div .gyf-page .gyf-flow li:not(:last-child)::after{
   content:'';display:inline-block;vertical-align:-1px;
   width:11px;height:11px;margin:0 8px 0 5px;
@@ -1356,7 +1127,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%20fill='none'%20stroke='black'%20stroke-width='2.2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M2%208h11.5M8.5%203l5%205-5%205'/%3E%3C/svg%3E") center/contain no-repeat;
           mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%20fill='none'%20stroke='black'%20stroke-width='2.2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M2%208h11.5M8.5%203l5%205-5%205'/%3E%3C/svg%3E") center/contain no-repeat;
 }
-/* 세로형 — 코스 약도 카드 / 코스 탭 패널 */
+/* 세로형 */
 .contents_div .gyf-page .gyf-hcard--route .gyf-flow li:not(:last-child)::after,
 .contents_div .gyf-page .gyf-route2-panel .gyf-flow li:not(:last-child)::after{
   content:'';display:block;
@@ -1369,43 +1140,26 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-hcard--route .gyf-flow li:not(:last-child)::after{width:11px;height:11px;margin:2px 0 2px 1px;}
 }
 
-/* ===== [수정] 모바일 정렬 보정 (웹 레이아웃은 그대로) ===== */
+/* 모바일 정렬 보정 (웹 레이아웃은 그대로) */
 @media (max-width:720px){
-  /* 카드 헤드 — 웹에서는 [부제+제목 | 태그] 가로 배치가 맞지만,
-     좁은 폭에서는 태그가 부제를 밀어 두 줄로 깨지거나 사이가 20px까지 좁아진다.
-     맛집 카드와 같은 형태로 태그를 제목 위 독립 줄에 올린다 */
   .contents_div .gyf-page .gyf-hcard-head{flex-direction:column;align-items:flex-start;gap:8px;}
   .contents_div .gyf-page .gyf-hcard-head > .gyf-ftag{order:-1;margin-top:0;}
 
-  /* 이용방법 3단계 — 웹에서는 한 줄이라 가운데 정렬이 자연스러웠지만
-     모바일에서 문구가 두 줄이 되면 숫자 배지가 줄 사이에 떠 보인다 → 첫 줄 기준 */
   .contents_div .gyf-page .gyf-steps li{align-items:flex-start;}
   .contents_div .gyf-page .gyf-steps .gyf-dot{margin-top:2px;}
 }
 
-/* ===== [수정] 모바일 — 소제목·리드문 좌우 들여쓰기 ===== */
-/* 카드는 섹션 가장자리에 붙고 카드 '안'의 글자는 패딩(--pad 14px + 테두리 1px)만큼 들어와 있다.
-   그래서 카드 밖 산문(h3 블록·리드문·미니헤드)만 15px 왼쪽으로 튀어나와 보였다.
-   같은 15px을 줘서 카드 안 글자와 세로선을 맞춘다. 카드/티켓/약도는 그대로 가장자리까지 */
+/* 모바일 */
 @media (max-width:720px){
 }
 
-/* ===== [수정] 모바일 — 히어로 인트로 ===== */
+/* 모바일 */
 @media (max-width:720px){
-  /* 리드문: .gyf-intro의 15px만으로는 글줄이 화면 끝까지 닿아 답답했다.
-     본문에만 15px을 더해 좌우 30px 여백 확보 (제목은 그대로 두어 위계 유지) */
 
-  /* h1: 24px 고정이라 '광주비엔날레와 / 여수세계섬박람회가 / 함께 열리는 가을이라니!' 3줄로 깨졌다.
-     첫 줄('광주비엔날레와 여수세계섬박람회가')이 한 줄에 들어갈 만큼 폭에 따라 줄어들게 해
-     어느 기기에서도 2줄로 떨어지게 한다.
-     calc(6.2vw - 5.2px) = 320px→14.6 / 360px→17.1 / 390px→19.0 / 430px→21.5 / 상한 22.3px.
-     컨테이너에 좌우 패딩이 더 붙는 환경(미리보기 등)까지 감안해 여유를 둔 계수 */
   .contents_div .gyf-page .gyf-intro .gyf-h1{font-size:clamp(12.3px, calc(6.2vw - 5.2px), 22.3px);}
 }
 
-/* ===== [추가] 히어로 — h1 위 애스터리스크 마크 ===== */
-/* 소제목(h3) 앞에 쓰는 6갈래 별표를 히어로 제목 위에 크게 올려 빈 공간을 잡아준다.
-   .gyf-mark 기본값은 먹색이라 먹색 배경 위에서 안 보인다 → 흰색으로 */
+/* 히어로 */
 .contents_div .gyf-page .gyf-intro > .gyf-marks{
   display:flex;align-items:center;justify-content:center;gap:14px;
   margin:0 0 20px;
@@ -1419,35 +1173,28 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-intro .gyf-mark{width:19px;height:19px;}
 }
 
-/* ===== [수정] 모바일 전용 보정 2차 ===== */
+/* 모바일 전용 보정 2차 */
 @media (max-width:720px){
 
-  /* 1) 숫자 ↔ 텍스트 간격 +2px (소제목 넘버 배지 / 앵커 내비 번호) */
   .contents_div .gyf-page .gyf-bhead{gap:10px;}
   .contents_div .gyf-page .gyf-nav-btn{gap:10px;}
 
-  /* 3) '세계적인 명성의 축제' 카드 사진 — 모바일 일괄 75%가 아니라 웹과 같은 62.5% 비율로 */
+  /* 3) '세계적인 명성의 축제' 카드 사진 */
   .contents_div .gyf-page #gyf-s1 .gyf-cell > .gyf-fig::before{padding-top:62.5%;}
 
-  /* 5) 섬섬캠핑·섬스팟투어 사진 프레임 — 75% → 70% (5%p 낮게) */
+  /* 5) 섬섬캠핑·섬스팟투어 사진 프레임 */
   .contents_div .gyf-page .gyf-hcard--fit:not(.gyf-hcard--poster) > .gyf-fig::before{padding-top:70%;}
 
-  /* 4) 포스터 카드(도시 기억의 변화 / 파빌리온 전시투어) — 포스터를 우측 썸네일로
-        세로로 긴 포스터를 꽉 채워 잘라 보여주던 것을 작게 넣고, 돋보기로 크게 보게 한다.
-        .gyf-hcard-body를 display:contents로 풀어 머리말·설명·정보를 카드 그리드에 직접 배치 */
-  /* 그리드로 칸을 나누면 포스터가 끝나도 본문이 왼쪽 칸에 갇힌다 →
-     포스터를 float:right로 띄워 본문이 옆을 지나 아래로 자연스럽게 흘러내리게 */
   .contents_div .gyf-page .gyf-hcard--poster{display:block;padding:var(--pad);}
   .contents_div .gyf-page .gyf-hcard--poster > .gyf-hcard-body{display:contents;}
   .contents_div .gyf-page .gyf-hcard--poster > .gyf-fig{
     float:right;height:auto;
-    width:clamp(84px, calc(61.5vw - 121px), 104px);  /* 상한 118 → 104: 옆 글줄 칸이 185→199px로 넓어져 줄 수가 줄어든다 */
+    width:clamp(84px, calc(61.5vw - 121px), 104px);
     margin:0 0 10px 12px;
     border:1px solid var(--c-cline);border-radius:6px;overflow:hidden;
   }
-  .contents_div .gyf-page .gyf-hcard--poster > .gyf-fig::before{padding-top:141%;}  /* 포스터 원본 비율 */
-  .contents_div .gyf-page .gyf-hcard--poster > .gyf-fig::after{content:none;}       /* 전면 배치용 구분선 해제 */
-  /* 태그·제목 묶음은 flex라 float을 침범하지 않고 옆에 나란히 선다 */
+  .contents_div .gyf-page .gyf-hcard--poster > .gyf-fig::before{padding-top:141%;}
+  .contents_div .gyf-page .gyf-hcard--poster > .gyf-fig::after{content:none;}
   .contents_div .gyf-page .gyf-hcard--poster .gyf-desc{margin-top:0;}
   /* 정보 표는 포스터 아래에서 전체 폭으로 시작 */
   .contents_div .gyf-page .gyf-hcard--poster .gyf-info{clear:both;margin-top:2px;}
@@ -1456,14 +1203,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-hcard--poster .gyf-zoom::before{-webkit-mask-size:14px 14px;mask-size:14px 14px;}
   .contents_div .gyf-page .gyf-hcard--poster .gyf-src{right:4px;bottom:4px;padding:2px 5px 3px;font-size:10px;max-width:calc(100% - 8px);}
 
-  /* 6) 교차할인 티켓 — 가로형 2장 세로 쌓기 → 세로형 2장 나란히(1행 2열) */
+  /* 6) 교차할인 티켓 */
   .contents_div .gyf-page .gyf-swap{grid-template-columns:1fr 1fr;}
   .contents_div .gyf-page .gyf-tk{
     --mainH:58px; --hole:9px;
     grid-template-columns:1fr;
     grid-template-rows:var(--mainH) 1fr;
     min-height:142px;
-    /* 홈(펀칭)을 좌우 측면, 먹색 칸이 끝나는 높이에 뚫는다 */
     -webkit-mask:radial-gradient(circle at 0 var(--mainH),transparent var(--hole),#000 calc(var(--hole) + .5px)) left/51% 100% no-repeat,
                  radial-gradient(circle at 100% var(--mainH),transparent var(--hole),#000 calc(var(--hole) + .5px)) right/51% 100% no-repeat;
             mask:radial-gradient(circle at 0 var(--mainH),transparent var(--hole),#000 calc(var(--hole) + .5px)) left/51% 100% no-repeat,
@@ -1482,10 +1228,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 모바일 전용 보정 3차 ===== */
+/* 모바일 전용 보정 3차 */
 @media (max-width:720px){
 
-  /* 1) DAY1·DAY2 코스 — 세로 나열(↓)은 스크롤이 너무 길어진다 → 가로 흐름(→)으로 */
+  /* 1) DAY1·DAY2 코스 */
   .contents_div .gyf-page .gyf-route2-panel .gyf-flow{
     flex-direction:row;flex-wrap:wrap;align-items:center;
     column-gap:0;row-gap:2px;line-height:1.5;
@@ -1501,11 +1247,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
             mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%20fill='none'%20stroke='black'%20stroke-width='2.2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M2%208h11.5M8.5%203l5%205-5%205'/%3E%3C/svg%3E") center/contain no-repeat;
   }
 
-  /* 2) 04 섹션 맛집 카드 — 사진을 위에 크게 깔면 스크롤이 길어진다 → [사진 | 본문] 가로 배치 */
+  /* 2) 04 섹션 맛집 카드 */
   .contents_div .gyf-page #gyf-s4 .gyf-eat{flex-direction:row;align-items:stretch;}
-  .contents_div .gyf-page #gyf-s4 .gyf-eat > .gyf-fig{flex:0 0 48%;width:48%;}  /* 38% → 48% */
+  .contents_div .gyf-page #gyf-s4 .gyf-eat > .gyf-fig{flex:0 0 48%;width:48%;}
   .contents_div .gyf-page #gyf-s4 .gyf-eat > .gyf-fig::before{padding-top:76%;}
-  /* 구분선을 사진 아래 → 사진 오른쪽으로 */
+  /* 구분선을 사진 아래 */
   .contents_div .gyf-page #gyf-s4 .gyf-eat > .gyf-fig::after{
     left:auto;right:0;top:0;bottom:0;width:1px;height:auto;
   }
@@ -1516,14 +1262,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 산문 좌우 들여쓰기 — 720px 이하로 확대 ===== */
-/* 600px에만 걸어뒀더니 601~720px(태블릿 세로·반응형 테스트 폭)에서는 적용이 안 돼
-   글줄이 화면 끝까지 닿았다. 카드가 1열로 떨어지는 600px보다 넓게 잡는다 */
+/* 산문 좌우 들여쓰기 */
 @media (max-width:720px){
-  /* 히어로 리드문 — .gyf-intro의 좌우 여백에 15px 추가 */
+  /* 히어로 리드문 */
   .contents_div .gyf-page .gyf-intro > .gyf-p{padding-left:15px;padding-right:15px;}
 
-  /* 소제목 블록·리드문·미니헤드 — 카드 안 글자와 세로선 맞춤 */
+  /* 소제목 블록·리드문·미니헤드 */
   .contents_div .gyf-page .gyf-row > .gyf-bhead,
   .contents_div .gyf-page .gyf-row > .gyf-p,
   .contents_div .gyf-page .gyf-row > .gyf-minihead,
@@ -1534,14 +1278,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 모바일 — '세계적인 명성의 축제' 카드 [사진 | 본문] 가로 배치 ===== */
-/* 맛집 카드와 같은 규칙. 사진은 열 높이에 맞춰 늘어나고 ::before 비율은 최소 높이로만 남는다 */
+/* 모바일 */
 @media (max-width:720px){
-  /* ↓ 사진이 든 카드에만 적용. :has(> .gyf-fig)로 한정하지 않으면
-        사진 없는 정보 카드(기간·장소)까지 안쪽 패딩이 0이 돼 글자가 카드 벽에 붙는다 */
-  /* 사진은 카드 왼쪽에 여백 없이 꽉 차게 (상하좌우 모두 카드 모서리에 붙는다).
-     기준 비율 5:4(padding-top 80%)이고, 본문이 길어 카드가 더 높아지면 그만큼 채운다.
-     정방형 원본을 넣어도 좌우만 잘리므로 주요 피사체가 가운데면 문제없다 */
   .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig){
     flex-direction:row;align-items:stretch;gap:0;padding:0;
   }
@@ -1549,13 +1287,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     flex:0 0 48%;width:48%;align-self:stretch;
     border:0;border-radius:0;
   }
-  .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig) > .gyf-fig::before{padding-top:80%;}  /* 5:4 */
-  /* 사진 아래 구분선 → 사진 오른쪽 세로선 */
+  .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig) > .gyf-fig::before{padding-top:80%;}
+  /* 사진 아래 구분선 */
   .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig) > .gyf-fig::after{
     content:'';left:auto;right:0;top:0;bottom:0;width:1px;height:auto;background:var(--c-cline);
   }
-  /* 광주비엔날레 카드(.is-gb)만 — 잘라내지 않고 가로폭에 맞춰 통째로, 남는 위아래는 흰 여백.
-     여수세계섬박람회 카드(.is-ys)는 기본값(cover) 유지 = 칸을 꽉 채운다 */
   .contents_div .gyf-page #gyf-s1 .gyf-cell.is-gb:has(> .gyf-fig) > .gyf-fig{background:#fff;}
   .contents_div .gyf-page #gyf-s1 .gyf-cell.is-gb:has(> .gyf-fig) > .gyf-fig > img{
     object-fit:contain;object-position:center;
@@ -1564,43 +1300,37 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig) > .gyf-cell-body > .gyf-fname{margin-bottom:8px;}
 }
 
-/* ===== [수정] 모바일 세로 여백 축소 — 스크롤 길이 줄이기 ===== */
-/* 웹 기준으로 잡힌 간격 토큰이 모바일에서도 그대로라 빈 공간이 많았다.
-   글자 크기는 그대로 두고 '사이 여백'만 조인다 (괄호 안이 기존 값) */
+/* 모바일 세로 여백 축소 */
 @media (max-width:720px){
   .contents_div .gyf-page{
-    --band:44px;     /* 45 → 34 → 44 : 섹션 상하 패딩 (위아래 각 10px 추가) */
-    --headgap:11px;  /* 26 → 20 → 13 → 11 : 섹션 헤더(h2) 아래 (누적 -9px) */
-    --block:30px;    /* 40 — h3 블록 사이 */
-    --row:20px;      /* 26 — 항목 행 사이 */
-    --hgap:10px;     /* 12 — 소제목 아래 */
+    --band:44px;
+    --headgap:11px;
+    --block:30px;
+    --row:20px;
+    --hgap:10px;
   }
-  .contents_div .gyf-page .gyf-shead{padding-bottom:13px;}        /* 16 */
-  .contents_div .gyf-page .gyf-intro .gyf-h1{padding-bottom:18px;} /* 26 */
+  .contents_div .gyf-page .gyf-shead{padding-bottom:13px;}
+  .contents_div .gyf-page .gyf-intro .gyf-h1{padding-bottom:18px;}
   .contents_div .gyf-page .gyf-p + .gyf-swap,
   .contents_div .gyf-page .gyf-p + .gyf-pair,
   .contents_div .gyf-page .gyf-p + .gyf-eats{margin-top:12px;}
   .contents_div .gyf-page .gyf-minihead{margin-top:18px;}
-  /* 정보 표 행 — 항목이 많아 1~2px씩만 줄여도 누적 효과가 크다 */
-  .contents_div .gyf-page .gyf-info > li{padding:7px 0;}   /* 9 */
+  /* 정보 표 행 */
+  .contents_div .gyf-page .gyf-info > li{padding:7px 0;}
   .contents_div .gyf-page .gyf-kv li{padding:7px 0;}
-  .contents_div .gyf-page .gyf-checks li{padding:11px 14px;} /* 14 */
-  .contents_div .gyf-page .gyf-stat{padding:9px 14px;}       /* 11 */
+  .contents_div .gyf-page .gyf-checks li{padding:11px 14px;}
+  .contents_div .gyf-page .gyf-stat{padding:9px 14px;}
 }
 
-/* ===== [수정] 360px 이하 — 포스터 썸네일 축소 ===== */
-/* 브라우저 글자 확대나 작은 기기에서는 118px 썸네일이 본문 칸을 너무 잡아먹는다.
-   (카드 안쪽 패딩은 380px 이하에서 이미 --pad:14px로 줄어 있음) */
+/* 360px 이하 */
 @media (max-width:389px){
-  /* 360px에서 한 번에 뚝 떨어지면 361px이 오히려 본문 칸이 더 좁아진다 → 폭에 따라 매끄럽게
-     calc(61.5vw - 121px) = 320px→84(하한) / 351px→95 / 361px→101 / 390px 이상 118px(상한) */
   .contents_div .gyf-page .gyf-hcard--poster > .gyf-fig{margin:0 0 8px 10px;}
   .contents_div .gyf-page .gyf-hcard--poster .gyf-zoom{top:4px;right:4px;width:21px;height:21px;}
   .contents_div .gyf-page .gyf-hcard--poster .gyf-zoom::before{-webkit-mask-size:12px 12px;mask-size:12px 12px;}
   .contents_div .gyf-page .gyf-hcard--poster .gyf-src{right:3px;bottom:3px;padding:1px 4px 2px;font-size:9px;max-width:calc(100% - 6px);}
 }
 
-/* ===== [수정] 모바일 — 본문 행간 1.56 통일 ===== */
+/* 모바일 */
 @media (max-width:720px){
   .contents_div .gyf-page{line-height:1.56;}
   .contents_div .gyf-page .gyf-p,
@@ -1617,23 +1347,20 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-checks li{line-height:1.56;}
 }
 
-/* ===== [수정] 모바일 — 소제목이 2줄일 때 별표/번호를 첫 줄에 맞춤 ===== */
-/* align-items:center면 두 줄 사이에 마크가 떠 보인다 → 위 정렬 + 첫 줄 중앙 보정 */
+/* 모바일 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-bhead{align-items:flex-start;}
   .contents_div .gyf-page .gyf-bhead > .gyf-mark{margin-top:4px;}
   .contents_div .gyf-page .gyf-bhead > .gyf-num{margin-top:0;}
 }
 
-/* ===== [수정] 모바일 — '9월~11월 광주·여수 제철 음식' 카드 사진 높이 축소 ===== */
-/* 모바일 공통 75% → 65% (10%p 낮게) */
+/* 모바일 */
+/* 모바일 공통 75% */
 @media (max-width:720px){
   .contents_div .gyf-page #gyf-s4 .gyf-cell > .gyf-fig::before{padding-top:65%;}
 }
 
-/* ===== [수정] 모바일 — 코스 약도를 웹처럼 [탭박스 | 지도] 가로 배치 ===== */
-/* 위아래로 쌓으면 지도가 화면 폭을 다 써서 세로로 커진다.
-   웹과 같은 좌우 배치로 되돌리되 탭박스 폭만 줄인다 */
+/* 모바일 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-route2{
     grid-template-columns:clamp(126px,40%,190px) minmax(0,1fr);
@@ -1659,12 +1386,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 모바일 — 약도를 칸 높이에 꽉 차게 확대 ===== */
-/* 지도가 원본 비율대로 들어가 탭박스보다 짧아지면서 위아래가 비었다.
-   높이를 100%로 채우고 남는 좌우를 잘라낸다.
-   이미지·경로선(svg)·핀에 '똑같은 상자'(height:100% + aspect-ratio 1424/1104)를 주므로
-   확대해도 핀 좌표(%)가 그대로 맞는다.
-   translate의 -65%는 원본 가로 65% 지점을 칸 가운데에 두라는 뜻 — 코스가 몰린 구간(40~90%) 기준 */
+/* 모바일 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-route2-maps{align-content:stretch;}
   .contents_div .gyf-page .gyf-route2-map{min-height:0;}
@@ -1678,42 +1400,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     top:50% !important;left:50% !important;right:auto !important;bottom:auto !important;
     height:100% !important;width:auto !important;
     aspect-ratio:1424 / 1104;
-    /* 확대 상한 — 칸 폭의 1.7배까지만 키운다. 이보다 더 키우면 좌우가 과하게 잘려
-       핀이 화면 밖으로 밀린다. 상한에 걸리면 높이가 조금 남고 그만큼 위아래 여백이 생긴다 */
     max-width:170% !important;margin:0 !important;
     transform:translate(var(--mapx,-62%),-50%);
   }
   .contents_div .gyf-page .gyf-fig.gyf-fig--route > img{object-fit:fill !important;}
-  /* 코스가 몰린 구간이 달라 날짜별로 중심을 따로 잡는다 (DAY1 핀 42~78% / DAY2 핀 63~88%) */
   .contents_div .gyf-page .gyf-route2-map[data-day="1"]{--mapx:-59%;}
   .contents_div .gyf-page .gyf-route2-map[data-day="2"]{--mapx:-75%;}
 }
 
-/* ===== [수정] 모바일 약도 — 오른쪽 흰 여백 제거 + 라벨 한 줄 ===== */
-/* ① 흰 여백 — 지도를 [높이 100% + 폭 자동 + max-width 170%]로 띄워놨는데,
-   칸이 가로로 넓어지면 이미지가 칸보다 좁아져 오른쪽에 흰 띄가 남았다
-   (DAY2 기준 360px 14px → 720px 134px). 지도가 항상 칸을 덮도록 고친다.
-   .gyf-fig--route를 컨테이너로 만들어 칸의 가로(cqi)·세로(cqb)를 직접 읽고
-     폭 = max(칸 가로, min(칸 가로의 170%, 칸 세로 × 1424/1104))
-   로 잡으면 어느 쪽으로도 칸보다 작아질 수 없다.
-   좌우 위치도 픽셀이 아니라 '치우침 비율'(--bias 0=왼쪽끝 ~ 1=오른쪽끝)로 주기 때문에
-   구조적으로 여백이 생길 수 없다. 광주 .72 / 여수 1 — 코스가 몰린 쪽을 보여주는 값이다.
-
-   ② 라벨 한 줄 — 두 줄로 접던 것을 nowrap으로 바꾸고, 안 들어가면 붙는 방향을 바꾼다.
-   여수 지도는 크롭 위치상 방향을 핀마다 따로 잡아야 한다.
-     1번 섬박람회 주행사장 → 왼쪽 (400px 이하는 아래쪽)
-     2번 오동도           → 왼쪽
-     3번 해상케이블카 자산정류장 → 위쪽 (가장 길어 좌우 어디에도 안 들어감)
-     4번 낭만포차거리      → 오른쪽
-   3번 라벨은 10px에서도 130px이라 칸이 203px 이하인 기기(390px 이하)에서는
-   어느 방향으로도 한 줄이 안 나온다. 그 구간에서만 두 줄로 접는다.
-   → 문구를 '해상케이블카' 정도로 줄이면 전 구간 한 줄로 통일된다(원고 확인 필요).
-
-   실측: 340~720px × DAY1·DAY2 전부 여백 0, 라벨 잘림 없음. 721px 이상 웹은 그대로 */
+/* 모바일 약도 */
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-fig.gyf-fig--route{
     container-type:size;container-name:gyfmap;
-    /* 핀 위치 계산에도 쓰이므로 칸(=이 요소) 쪽에 정의해 하위로 상속시킨다 */
     --mapw:max(100cqi, min(170cqi, calc(100cqb * 1424 / 1104)));
   }
   .contents_div .gyf-page .gyf-fig.gyf-fig--route > img,
@@ -1729,32 +1427,20 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-route2-map[data-day="2"]{--bias:1;}
   .contents_div .gyf-page .gyf-route2 .gyf-rpin-txt{
     white-space:nowrap !important;max-width:none !important;
-    border-width:1px !important;   /* 웹 1.5px → 모바일 1px (작은 라벨에서 테두리가 두꺼워 보임) */
+    border-width:1px !important;
   }
-  /* 1번 — 번호 '위쪽'에 왼쪽 맞춤으로 얹는다.
-     좌우로 붙이면 좁은 폭에서 잘리고, 아래로 내리면 지도 하단에서 잘린다 */
   .contents_div .gyf-page .gyf-route2-map[data-day="2"] .gyf-rpin.is-left:nth-child(1){
     flex-direction:column-reverse !important;align-items:flex-start !important;
     transform:translate(-11px, calc(-100% + 11px)) !important;
-    --rpin-tx:-20px !important;   /* 라벨만 왼쪽으로 20px (번호는 좌표 그대로) */
+    --rpin-tx:-20px !important;
   }
-  /* 2번은 3번의 위쪽 라벨과 높이가 겹친다 → 라벨만 14px 올린다(번호는 좌표 그대로) */
   .contents_div .gyf-page .gyf-route2-map[data-day="2"] .gyf-rpin.is-left:nth-child(2){
     flex-direction:row-reverse !important;transform:translate(calc(-100% + 11px),-50%) !important;
-    --rpin-ty:-22px !important;   /* 3번 라벨이 오른쪽으로 15px 오면서 붙어 8px 더 올림 */
+    --rpin-ty:-22px !important;
   }
-  /* 3번 — 번호 '위쪽'에 얹되 오른쪽 끝을 핀에 맞춰 왼쪽으로 뺀다.
-     그냥 왼쪽으로 붙이면 2번(오동도) 라벨과 가로로 겹치고,
-     고정 px으로 밀면 좁은 폭에서 지도 왼쪽 밖으로 나간다.
-     max()의 두 번째 값이 '지도 왼쪽 끝에서 3px' 한계선이라
-     폭이 좁아지면 저절로 덜 밀려 잘리지 않는다.
-     0.32093 = 1 − 0.67907(3번 핀의 가로 위치). --bias:1이라 아래 식이 성립한다:
-       핀의 칸 기준 x = 100cqi − 0.32093 × 지도폭 */
   .contents_div .gyf-page .gyf-route2-map[data-day="2"] .gyf-rpin.is-left:nth-child(3){
     flex-direction:column-reverse !important;align-items:flex-end !important;
     transform:translate(calc(-100% + 11px), calc(-100% + 11px)) !important;
-    /* 라벨 왼쪽 끝이 지도 밖으로 나가려 하면 그만큼만 오른쪽으로 되민다.
-       번호 동그라미는 transform에 묶여 있어 움직이지 않는다 */
     --rpin-tx:calc(15px + max(0px, calc(100% - 8px - (100cqi - 0.32093 * var(--mapw))))) !important;
   }
   .contents_div .gyf-page .gyf-route2-map[data-day="2"] .gyf-rpin.is-left:nth-child(4){
@@ -1765,7 +1451,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page .gyf-route2-map[data-day="2"] .gyf-rpin.is-left:nth-child(1){
     transform:translate(-10px, calc(-100% + 10px)) !important;
   }
-  /* 480px 이하 — 2번 라벨을 24px 올리고 오른쪽으로 14px 민다(번호는 좌표 그대로) */
+  /* 480px 이하 */
   .contents_div .gyf-page .gyf-route2-map[data-day="2"] .gyf-rpin.is-left:nth-child(2){
     transform:translate(calc(-100% + 10px),-50%) !important;
     --rpin-ty:-24px !important;
@@ -1780,11 +1466,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-
-
-/* ===== [수정] 좁은 화면 — 코스 탭박스 글자 축소로 약도 칸 높이 낮추기 ===== */
-/* 탭박스가 높으면 지도를 그만큼 확대해야 하고, 확대할수록 좌우가 많이 잘린다.
-   글자를 줄여 탭박스를 낮추면 확대율이 내려가 지도가 더 가로형으로 보인다 */
+/* 좁은 화면 */
 @media (max-width:420px){
   .contents_div .gyf-page .gyf-route2-tab{padding:7px 3px 6px;}
   .contents_div .gyf-page .gyf-route2-panels{padding:9px 8px;}
@@ -1796,46 +1478,41 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
 }
 
-/* ===== [수정] 푸터 해시태그 테두리 연하게 (웹·모바일 공통) ===== */
-/* 흰색 80%는 먹색 배경 위에서 너무 또렷해 태그가 본문보다 먼저 읽힌다 */
+/* 푸터 해시태그 테두리 연하게 (웹·모바일 공통) */
 .contents_div .gyf-page .gyf-hash li{border-color:rgba(255,255,255,.38);}
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-hash li{border-color:rgba(255,255,255,.32);}
 }
 
-/* ===== [추가] 히어로 — 별도 제작 블록(#gjHero) ===== */
-/* ===== 히어로 섹션 (embed-safe: 모든 규칙 #gjHero 하위로 스코프) ===== */
+/* 히어로 */
+/* 히어로 섹션 (embed-safe: 모든 규칙 #gjHero 하위로 스코프) */
 #gjHero{
-  --tilt: -12.5deg;      /* 휴대폰 기울기. 반대로 눕히려면 12.5deg */
+  --tilt: -12.5deg;
   --pop: cubic-bezier(.34,1.42,.64,1);
-  --kick: 5deg;          /* 휴대폰 등장 회전 스냅. 0deg면 스케일만 튕김 */
+  --kick: 5deg;
   --ease: cubic-bezier(.65,0,.35,1);
   position:relative;
   width:100%;
-  max-width:800px;       /* 표시 최대 너비 800px, 원본은 1600px */
+  max-width:800px;
   height:auto;
   margin:0 auto;
-  overflow:hidden;       /* 뿅 등장 시 살짝 넘치는 영역 정리 */
+  overflow:hidden;
   -webkit-tap-highlight-color:transparent;
 }
 #gjHero *{box-sizing:border-box;}
 
-/* 배경: 유일한 in-flow 요소 → 히어로 높이를 결정(height:auto) */
+/* 배경: 유일한 in-flow 요소 */
 #gjHero .gj-bg{
   display:block; width:100%; height:auto;
   position:relative; z-index:1;
 }
 
-/* 겹치는 레이어 공통
-   이미지가 전부 1600x1820 전체 캔버스(투명 배경)라 좌표를 줄 필요 없이 그대로 포갠다.
-   대신 팝 애니메이션의 기준점은 그림 내용의 실제 중심으로 잡아야 제자리에서 튕긴다. */
 #gjHero .gj-lay{
   position:absolute; left:0; top:0; display:block;
   width:100%; height:auto;
   will-change:transform,opacity;
 }
 
-/* transform-origin = 각 레이어 그림의 실측 중심 (1600x1820 대비 %) */
 #gjHero .gj-msg  { z-index:2; transform-origin:24.5938% 53.2692%; }
 #gjHero .gj-right{ z-index:3; transform-origin:84.3125% 46.6758%; }
 #gjHero .gj-left { z-index:4; transform-origin:18.9688% 77.9670%; }
@@ -1843,8 +1520,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 /* 중앙 휴대폰 그룹 (프레임 + 내부 릴) */
 #gjHero .gj-phone{
   position:absolute; z-index:999;
-  left:0; top:0; width:100%;            /* 프레임도 전체 캔버스 이미지 */
-  transform-origin:51.3125% 63.7363%;   /* 실측한 휴대폰 실제 중심 (내용 x514~1128, y657~1663) */
+  left:0; top:0; width:100%;
+  transform-origin:51.3125% 63.7363%;
   transform:rotate(var(--tilt));
   will-change:transform,opacity;
 }
@@ -1853,18 +1530,15 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   display:block; position:relative; z-index:2;
   width:100%; height:auto; pointer-events:none;
 }
-/* 화면 구멍 = 클리핑 윈도우 (프레임 테두리 중앙선에 맞춤) */
 #gjHero .gj-screen{
   position:absolute; z-index:1;
-  left:32.5938%; top:36.4560%;     /* 프레임 테두리 중앙선 실측 (521.5px, 663.5px) */
-  width:37.4375%;                  /* 599px */
+  left:32.5938%; top:36.4560%;
+  width:37.4375%;
   aspect-ratio:599 / 993;
   overflow:hidden;
-  border-radius:16.19% / 9.78%;   /* 원형 라운드 유지 */
+  border-radius:16.19% / 9.78%;
   background:#0b3e63;
 }
-/* 세로 릴 트랙: 슬라이드 4장 + 1번 복제 = 5칸 */
-/* 되감기 순간 파란 배경이 비치지 않도록 1번 사진을 바닥에 깔아둠 (JS가 삽입) */
 #gjHero .gj-back{
   position:absolute; left:0; top:0;
   width:100%; height:100%;
@@ -1876,7 +1550,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   display:flex; flex-direction:column;
   backface-visibility:hidden;
 }
-/* 릴 레이어 승격은 휴대폰 등장이 끝난 뒤에만 (등장 중 재래스터 방지) */
 #gjHero.gj-live .gj-reel{ will-change:transform; }
 #gjHero .gj-reel img{
   display:block; width:100%; height:20%;
@@ -1890,13 +1563,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 #gjHero .gj-left,
 #gjHero .gj-phone{ opacity:0; }
 
-/* ---- 뷰포트 35% 진입 시 1회 재생 ---- */
 #gjHero.is-in .gj-msg  { animation:gjPop .58s .15s var(--pop) both; }
 #gjHero.is-in .gj-right{ animation:gjPop .58s .38s var(--pop) both; }
 #gjHero.is-in .gj-left { animation:gjPop .58s .61s var(--pop) both; }
 #gjHero.is-in .gj-phone{ animation:gjPopPhone .58s 1.00s var(--pop) both; }
-
-/* ---- 릴 넘김: 타이밍은 아래 script의 REEL 설정에서 관리 ---- */
 
 @keyframes gjPop{
   0%  { opacity:0; transform:scale(.80); }
@@ -1918,39 +1588,25 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   #gjHero .gj-phone{ transform:rotate(var(--tilt)); }
 }
 
-/* ===== [수정] 모바일 가로형 카드 — 본문 칸이 좁아 줄바꿈이 일찍 일어나던 문제 ===== */
-/* 사진이 카드의 48%를 가져가 본문에는 142px(390px 기준)밖에 남지 않았다.
-   한국어 어절 한 덩어리가 4~5자 ≈ 60px이라 두 덩어리면 칸이 차고,
-   세 번째는 들어갈 자리가 없어 밀려난다. word-break:keep-all은 어절을 쪼개지
-   않으므로 오른쪽에 20~45px 빈칸이 그대로 남는다 — '여백은 충분한데 줄이 넘어가는' 모양.
-   사진 48% → 40%, 카드 안쪽 여백 14 → 12px로 본문 칸을 142 → 172px(+21%) 확보한다.
-   360px 기준 주소 2줄 → 1줄, 소개문 3줄 → 2줄로 줄어든다.
-   텔스트 줄바꿈 규칙(word-break:keep-all, text-wrap:pretty)은 그대로 둔다 —
-   pretty를 끄면 마지막 줄에 2글자만 남는 고아줄이 생긴다 */
+/* 모바일 가로형 카드 */
 @media (max-width:720px){
   /* 04 맛집 카드 */
   .contents_div .gyf-page #gyf-s4 .gyf-eat > .gyf-fig{flex:0 0 34%;width:34%;}
   .contents_div .gyf-page #gyf-s4 .gyf-eat-body{padding:12px 11px;}
-  /* 01 축제 카드 — 같은 [사진 | 본문] 구조라 같은 비율을 적용한다 */
+  /* 01 축제 카드 */
   .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig) > .gyf-fig{flex:0 0 34%;width:34%;}
   .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig) > .gyf-cell-body{padding:12px 11px;}
-  /* 이 두 카드의 본문만 text-wrap:pretty를 끈다.
-     pretty는 마지막 줄이 짧아지지 않게 앞줄에서 단어를 끌어내리는데,
-     180~200px짜리 좁은 칸에서는 첫 줄이 70%만 차고 넘어가 버린다.
-     (실측: '할매김치가 킥인 / 광주국밥의 정석' 96+96 → '할매김치가 킥인 광주국밥의 정석' 196 한 줄)
-     문단이 긴 다른 본문에는 pretty가 유효하므로 여기만 해제한다 */
   .contents_div .gyf-page #gyf-s4 .gyf-eat-body :where(p),
   .contents_div .gyf-page #gyf-s1 .gyf-cell-body :where(p){text-wrap:wrap;}
 }
 </style>
 
-<div id="TEST-SPACER" style="height:1500px;background:#d9d9d9;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;box-sizing:border-box;font:700 14px/1.4 sans-serif;color:#8a8a8a">테스트용 빈 섹션 1500px — 배포 전 이 &lt;div&gt; 한 줄 삭제 ↓ 히어로 시작</div>
 <div class="gyf-wrap">
 <div class="gyf-page">
 
 <!-- 히어로 -->
 <section class="gyf-sec gyf-hero" aria-labelledby="gyf-title">
-<!-- LCP 이미지 미리 내려받기 — CMS 본문에는 head가 없어 스크립트로 head에 넣는다 -->
+<!-- LCP 이미지 preload -->
 <script>
 (function(){
   try{
@@ -2419,12 +2075,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   var btns = wrap.querySelectorAll('.gyf-nav-btn');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ===== [추가] 코스 약도 — 경로선 나타남 + 핀 1,2,3,4 순서대로 ===== */
-  /* 선을 따라 그리는 연출은 뺐다(느리게 보임) → 경로선은 통째로 한 번에 나타난다.
-     핀만 번호 순서대로 톡톡 찍힌다.
-     · 화면에 들어오면 1회 재생, 탭을 바꾸면 그 지도를 다시 재생
-     · 모션 최소화·구형 브라우저면 아무것도 하지 않는다(= 원래대로 다 보임)
-     조절: LINE(선 나타나는 시간), START(핀 시작 시점), STEP(핀 간격) — 단위 ms */
+  /* 코스 약도 */
   (function(){
     var box = wrap.querySelector('.gyf-route2');
     if(!box) return;
@@ -2446,7 +2097,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       m.timers = [];
       m.svg.classList.remove('is-on');
       for(var i=0;i<m.pins.length;i++){ m.pins[i].classList.remove('is-on'); }
-      void m.svg.getBoundingClientRect();   /* 강제 리플로우 — 안 하면 되감기지 않는다 */
+      void m.svg.getBoundingClientRect();
     }
     function play(m){
       reset(m);
@@ -2471,20 +2122,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     }, { threshold:0, rootMargin:'0px 0px -12% 0px' });
     rio.observe(box);
 
-    /* 탭을 누르면 그 지도를 다시 재생 (클래스가 바뀐 뒤 실행되도록 뒤로 미룬다) */
     Array.prototype.forEach.call(box.querySelectorAll('.gyf-route2-tab'), function(tab){
       tab.addEventListener('click', function(){ if(seen) setTimeout(playActive, 0); });
     });
   })();
 
-  /* ===== [추가] 스크롤 등장 연출 ===== */
-  /* 섹션 헤더·소제목·리드문·카드가 화면에 들어올 때 살짝 올라오며 나타난다.
-     · 숨김 상태는 여기서 .gyf-anim을 붙인 뒤에야 켜진다 → JS가 안 돌면 그냥 다 보인다
-     · 모션 최소화 설정이거나 IntersectionObserver가 없으면 아예 시작하지 않는다
-     · 히어로(#gjHero)는 자체 등장 연출이 있어 제외한다
-     · 한 번 나타난 요소는 관찰을 끊는다(unobserve) — 스크롤을 올려도 다시 사라지지 않게
-     조절: rootMargin의 -12%(화면 아래 12% 지점을 경계선으로 — 값을 키우면 더 늦게 시작),
-           STEP(순차 등장 간격), 위 CSS의 28px·.7s */
+  /* 스크롤 등장 연출 */
   (function(){
     var page = wrap.querySelector('.gyf-page') || wrap;
     if(reduce || !('IntersectionObserver' in window)) return;
@@ -2496,12 +2139,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
             + '.gyf-foot-title, .gyf-foot-sub, .gyf-hash';
     var all = [], nodes = page.querySelectorAll(SEL), i;
     for(i=0;i<nodes.length;i++){
-      /* 히어로 안쪽은 건너뛴다 */
       if(nodes[i].closest && nodes[i].closest('#gjHero')) continue;
       all.push(nodes[i]);
     }
-    /* 겹쳐 걸린 것 제거 — 대상 안에 또 대상이 있으면 바깥쪽만 남긴다
-       (안쪽까지 애니메이션하면 부모가 사라진 채로 자식이 먼저 나타나 깜빡인다) */
     var items = [];
     for(i=0;i<all.length;i++){
       var nested = false;
@@ -2514,7 +2154,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     if(!items.length) return;
 
     page.classList.add('gyf-anim');
-    /* 접속 시점에 이미 화면에 보이는 요소는 숨기지 않는다 — 켜자마자 깜빡이는 것 방지 */
     var vh = window.innerHeight || document.documentElement.clientHeight;
     var hidden = [];
     for(i=0;i<items.length;i++){
@@ -2543,8 +2182,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     }, { threshold:0, rootMargin:'0px 0px -12% 0px' });
     for(i=0;i<items.length;i++){ io.observe(items[i]); }
 
-    /* 페이지 맨 끝에 붙은 요소(푸터 해시태그 등)는 더 스크롤할 수 없어
-       등장선(화면 아래 12% 지점)에 영영 못 닿는다 → 바닥에 닿으면 남은 것을 모두 등장시킨다 */
     var ticking = false;
     function atBottom(){
       ticking = false;
@@ -2567,9 +2204,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     window.addEventListener('resize', atBottom);
   })();
 
-  /* 인트로 타이틀 드래그 연출 — 화면에 들어와 있는 동안 계속 반복 */
-  /* 60% 이상 보이면 켜고, 완전히 벗어나면 끈다(다시 들어올 때 처음부터 재생).
-     disconnect 하지 않는다 — 한 번 보고 끝나면 히어로 연출에 묻히기 때문 */
+  /* 인트로 타이틀 드래그 연출 */
   var drag = wrap.querySelector('.gyf-drag');
   if(drag){
     if(reduce || !('IntersectionObserver' in window)){ drag.classList.add('is-on'); }
@@ -2593,7 +2228,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     });
   }
 
-  /* 추천 코스 — DAY 탭 */
+  /* 추천 코스 */
   (function(){
     var box = wrap.querySelector('.gyf-route2');
     if(!box) return;
@@ -2632,7 +2267,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     }
   })();
 
-  /* 라벨 캡슐 균등 배분 (타이포그래피 기준 8번 A안) */
   function readLS(el){
     var v = window.getComputedStyle(el).letterSpacing;
     return v === 'normal' ? 0 : (parseFloat(v) || 0);
@@ -2676,7 +2310,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 </script>
 
 <style>
-/* 라이트박스는 body 직속으로 붙는다(CMS 래퍼의 overflow·z-index 영향을 받지 않도록) */
 .gyf-lightbox{
   position:fixed;inset:0;z-index:99999;
   display:none;
@@ -2727,7 +2360,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 </style>
 
 <script>
-/* 포스터 확대 보기 — 확대 아이콘/사진 클릭 → 라이트박스 */
+/* 포스터 확대 보기 */
 (function(){
   var wrap = document.querySelector('.contents_div .gyf-wrap') || document.querySelector('.gyf-wrap');
   if(!wrap) return;
@@ -2813,52 +2446,37 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   if(!hero) return;
   var fired = false;
 
-  /* ============================================================
-     릴(사진 넘김) 타이밍 설정 — 여기 숫자만 고치면 됩니다 (단위: 초)
-     ============================================================ */
   var REEL = {
-    start:     1.62,   /* 휴대폰 등장 시작 후 릴이 첫 넘김을 준비할 때까지 */
-    slide:     0.50,   /* 한 장 넘어가는 데 걸리는 시간 */
-    hold:      1.97,   /* 각 사진 정지 시간 (숫자 하나 = 전 사진 공통,
-                          [1.97,1.97,1.97,1.97] 처럼 배열로 개별 지정도 가능) */
-    firstHold: 1.40    /* 맨 처음 1번 사진만 짧게. 휴대폰이 뿅 등장할 때부터
-                          이미 시선에 들어오므로. 루프로 돌아온 뒤에는 hold 적용 */
+    start:     1.62,
+    slide:     0.50,
+    hold:      1.97,
+    firstHold: 1.40
   };
 
-  /* 릴 생성: 칸 높이와 이동 거리를 px로 직접 계산해 박아넣는다.
-     CSS의 height:500% / flex:0 0 20% / translate(-40%)는 모두 aspect-ratio로
-     만들어진 박스에 대한 퍼센트라 브라우저마다 해석이 갈린다. 조금만 어긋나도
-     칸이 밀려 배경색이 비치므로, 측정한 실제 px 값만 사용한다. */
   var reelAnim = null;
 
   function buildReel(){
     var scr  = hero.querySelector('.gj-screen');
     var reel = hero.querySelector('.gj-reel');
-    if(!scr || !reel || !reel.animate) return;                 /* 미지원 시 1번 사진 고정 */
+    if(!scr || !reel || !reel.animate) return;
     if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    /* 화면 구멍의 정확한 높이(소수점 포함). transform 회전에 영향받지 않는 값 */
     var h = parseFloat(getComputedStyle(scr).height);
-    if(!(h > 0)){ requestAnimationFrame(buildReel); return; }  /* 레이아웃 전이면 재시도 */
+    if(!(h > 0)){ requestAnimationFrame(buildReel); return; }
 
-    /* 디바이스 픽셀 단위로 올림. 칸이 구멍보다 아주 조금이라도 짧아져 틈이 생기는 일을 막고,
-       이동 거리가 픽셀 격자에 맞아떨어져 정지 중 사진이 더 또렷해진다. */
     var dpr = window.devicePixelRatio || 1;
     h = Math.ceil(h * dpr) / dpr;
 
-    var cells = reel.children.length;                          /* 사진 4장 + 1번 복제 = 5칸 */
-    var n     = cells - 1;                                     /* 실제로 보여줄 장수 */
+    var cells = reel.children.length;
+    var n     = cells - 1;
     if(n < 1) return;
 
-    /* 칸 높이를 px로 고정. 컬럼 플렉스에서는 flex-basis가 height를 이기므로 함께 지정 */
     reel.style.height = (cells * h) + 'px';
     for(var k = 0; k < cells; k++){
       reel.children[k].style.flex   = '0 0 ' + h + 'px';
       reel.children[k].style.height = h + 'px';
     }
 
-    /* 되감기 순간 릴이 한 프레임 비어도 파란 배경이 드러나지 않도록 1번을 바닥에 깔아둠.
-       되감기 시점에 보여야 할 그림이 어차피 1번이라 눈에 띄지 않는다. */
     if(!reel.previousElementSibling){
       var back = reel.children[0].cloneNode(false);
       back.className = 'gj-back';
@@ -2876,7 +2494,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     var ease = (getComputedStyle(hero).getPropertyValue('--ease') || '').trim()
                || 'cubic-bezier(.65,0,.35,1)';
 
-    /* 사진마다 [정지 시작] → [정지 끝] 두 점을 찍고, 정지 끝에서 다음 칸으로 밀어낸다 */
+    /* 사진마다 [정지 시작] */
     var frames = [], t = 0;
     for(i = 0; i < n; i++){
       var y = 'translate3d(0,' + (-(i * h)).toFixed(3) + 'px,0)';
@@ -2887,14 +2505,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     }
     frames.push({ offset: 1, transform: 'translate3d(0,' + (-(n * h)).toFixed(3) + 'px,0)' });
 
-    /* 1번만 짧게 보여주는 방법: 루프의 첫 정지 구간을 잘라먹고 시작한다.
-       잘려나가는 구간은 트랙이 멈춰 있는 시간이라 눈에 보이는 움직임이 없으므로,
-       시작 딜레이를 그만큼 앞당기는 것만으로 충분하다.
-       (iterationStart 같은 덜 보편적인 기능을 쓰지 않는다) */
     var delay = REEL.start - holds[0] + REEL.firstHold;
     if(delay < 0) delay = 0;
 
-    var resume = reelAnim ? reelAnim.currentTime : null;       /* 리사이즈 시 진행 위치 유지 */
+    var resume = reelAnim ? reelAnim.currentTime : null;
     if(reelAnim) reelAnim.cancel();
     reelAnim = reel.animate(frames, {
       duration:   total * 1000,
@@ -2905,7 +2519,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     if(resume != null) reelAnim.currentTime = resume;
   }
 
-  /* 폭이 바뀌면 px 값을 다시 계산 (진행 중인 위치는 그대로 이어받음) */
   function watchResize(){
     var scr = hero.querySelector('.gj-screen');
     if(!scr) return;
@@ -2923,7 +2536,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     }
   }
 
-  /* 모든 이미지를 디코딩까지 끝낸 뒤 시작 (등장 중 디코딩으로 생기는 프레임 끊김 방지) */
   function whenDecoded(cb){
     var imgs = hero.querySelectorAll('img');
     var left = imgs.length, done = false;
@@ -2939,7 +2551,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       else if(im.complete){ tick(); }
       else { im.addEventListener('load', tick); im.addEventListener('error', tick); }
     }
-    setTimeout(finish, 3000);   /* 안전장치 */
+    setTimeout(finish, 3000);
   }
 
   function play(){
@@ -2951,8 +2563,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       var phone = hero.querySelector('.gj-phone');
       if(!phone) { hero.classList.add('gj-live'); return; }
       phone.addEventListener('animationend', function(){
-        hero.classList.add('gj-live');       /* 릴 레이어 승격 */
-        phone.style.willChange = 'auto';     /* 다 쓴 레이어 해제 */
+        hero.classList.add('gj-live');
+        phone.style.willChange = 'auto';
       }, { once:true });
     });
   }
@@ -2963,8 +2575,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       var e = entries[i];
       if(!e.isIntersecting) continue;
       var visible = e.intersectionRect.height;
-      var needEl  = e.boundingClientRect.height * 0.35;          // 요소의 35%
-      var needVp  = (window.innerHeight || 800) * 0.35;          // 뷰포트 35% (히어로가 화면보다 클 때)
+      var needEl  = e.boundingClientRect.height * 0.35;
+      var needVp  = (window.innerHeight || 800) * 0.35;
       if(visible >= needEl || visible >= needVp){
         play(); io.disconnect(); return;
       }
