@@ -1569,8 +1569,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
    글자 크기는 그대로 두고 '사이 여백'만 조인다 (괄호 안이 기존 값) */
 @media (max-width:720px){
   .contents_div .gyf-page{
-    --band:34px;     /* 45 — 섹션 상하 패딩 */
-    --headgap:20px;  /* 26 — 섹션 헤더 아래 */
+    --band:44px;     /* 45 → 34 → 44 : 섹션 상하 패딩 (위아래 각 10px 추가) */
+    --headgap:11px;  /* 26 → 20 → 13 → 11 : 섹션 헤더(h2) 아래 (누적 -9px) */
     --block:30px;    /* 40 — h3 블록 사이 */
     --row:20px;      /* 26 — 항목 행 사이 */
     --hgap:10px;     /* 12 — 소제목 아래 */
