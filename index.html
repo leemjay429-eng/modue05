@@ -550,6 +550,23 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-drag.is-on::after{left:100%;opacity:1;animation:gyfCaret 1s steps(1) 1.6s infinite;}
 @keyframes gyfCaret{0%{opacity:1}50%{opacity:0}}
 
+/* ===== [추가] 스크롤 등장 연출 — 섹션 요소가 올라오며 나타남 ===== */
+/* 숨김 상태는 스크립트가 .gyf-anim을 붙여야 켜진다.
+   CSS에 기본으로 숨겨두면 JS가 막힌 환경(구형 브라우저·확장프로그램)에서
+   본문이 영영 안 보이는 사고가 난다. 그래서 '보이는 것'이 기본값이다.
+   애니메이션은 opacity/transform만 건드려 리플로우를 만들지 않는다.
+   세기 조절: 16px(올라오는 거리), .52s(속도) */
+.contents_div .gyf-page.gyf-anim .gyf-rise{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .52s cubic-bezier(.22,.61,.36,1), transform .52s cubic-bezier(.22,.61,.36,1);
+}
+.contents_div .gyf-page.gyf-anim .gyf-rise.is-in{opacity:1;transform:none;}
+/* 이미 자리를 잡은 뒤에는 transition을 지워 탭 전환·리사이즈 때 덜컥거리지 않게 한다 */
+.contents_div .gyf-page.gyf-anim .gyf-rise.is-done{transition:none;}
+@media (prefers-reduced-motion: reduce){
+  .contents_div .gyf-page.gyf-anim .gyf-rise{opacity:1;transform:none;transition:none;}
+}
+
 /* ===== [수정] 인트로 드래그 연출 — 1회 → 반복 ===== */
 /* 히어로 애니메이션과 시선이 겹쳐 한 번 긋고 끝나면 묻힌다. 계속 돌린다.
    transition(1회성)을 animation(무한)으로 바꾸고, 화면 안에 있을 때만 돌린다
@@ -1660,7 +1677,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
   .contents_div .gyf-page .gyf-route2-map[data-day="1"]{--bias:.72;}
   .contents_div .gyf-page .gyf-route2-map[data-day="2"]{--bias:1;}
-  .contents_div .gyf-page .gyf-route2 .gyf-rpin-txt{white-space:nowrap !important;max-width:none !important;}
+  .contents_div .gyf-page .gyf-route2 .gyf-rpin-txt{
+    white-space:nowrap !important;max-width:none !important;
+    border-width:1px !important;   /* 웹 1.5px → 모바일 1px (작은 라벨에서 테두리가 두꺼워 보임) */
+  }
   /* 1번 — 번호 '위쪽'에 왼쪽 맞춤으로 얹는다.
      좌우로 붙이면 좁은 폭에서 잘리고, 아래로 내리면 지도 하단에서 잘린다 */
   .contents_div .gyf-page .gyf-route2-map[data-day="2"] .gyf-rpin.is-left:nth-child(1){
@@ -2347,6 +2367,63 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   /* 앵커 내비 */
   var btns = wrap.querySelectorAll('.gyf-nav-btn');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ===== [추가] 스크롤 등장 연출 ===== */
+  /* 섹션 헤더·소제목·리드문·카드가 화면에 들어올 때 살짝 올라오며 나타난다.
+     · 숨김 상태는 여기서 .gyf-anim을 붙인 뒤에야 켜진다 → JS가 안 돌면 그냥 다 보인다
+     · 모션 최소화 설정이거나 IntersectionObserver가 없으면 아예 시작하지 않는다
+     · 히어로(#gjHero)는 자체 등장 연출이 있어 제외한다
+     · 한 번 나타난 요소는 관찰을 끊는다(unobserve) — 스크롤을 올려도 다시 사라지지 않게
+     조절: threshold(얼마나 보여야 시작할지), STEP(순차 등장 간격), 위 CSS의 16px·.52s */
+  (function(){
+    var page = wrap.querySelector('.gyf-page') || wrap;
+    if(reduce || !('IntersectionObserver' in window)) return;
+
+    var SEL = '.gyf-shead, .gyf-block > .gyf-bhead, .gyf-row > .gyf-bhead,'
+            + '.gyf-block > .gyf-p, .gyf-row > .gyf-p, .gyf-minihead,'
+            + '.gyf-hcard, .gyf-cell, .gyf-eat, .gyf-tk, .gyf-route2,'
+            + '.gyf-ctas, .gyf-steps, .gyf-info, .gyf-checks, .gyf-stats,'
+            + '.gyf-foot-title, .gyf-foot-sub, .gyf-hash';
+    var all = [], nodes = page.querySelectorAll(SEL), i;
+    for(i=0;i<nodes.length;i++){
+      /* 히어로 안쪽은 건너뛴다 */
+      if(nodes[i].closest && nodes[i].closest('#gjHero')) continue;
+      all.push(nodes[i]);
+    }
+    /* 겹쳐 걸린 것 제거 — 대상 안에 또 대상이 있으면 바깥쪽만 남긴다
+       (안쪽까지 애니메이션하면 부모가 사라진 채로 자식이 먼저 나타나 깜빡인다) */
+    var items = [];
+    for(i=0;i<all.length;i++){
+      var nested = false;
+      for(var pa = all[i].parentNode; pa && pa !== page; pa = pa.parentNode){
+        for(var j=0;j<all.length;j++){ if(all[j] === pa){ nested = true; break; } }
+        if(nested) break;
+      }
+      if(!nested) items.push(all[i]);
+    }
+    if(!items.length) return;
+
+    page.classList.add('gyf-anim');
+    for(i=0;i<items.length;i++){ items[i].classList.add('gyf-rise'); }
+
+    var STEP = 70, MAXDELAY = 280;
+    var io = new IntersectionObserver(function(ents){
+      /* 같은 순간에 들어온 것들끼리 위에서부터 차례로 */
+      var hits = [];
+      for(var k=0;k<ents.length;k++){ if(ents[k].isIntersecting) hits.push(ents[k].target); }
+      if(!hits.length) return;
+      hits.sort(function(a,b){ return a.getBoundingClientRect().top - b.getBoundingClientRect().top; });
+      for(var n=0;n<hits.length;n++){
+        (function(el, d){
+          el.style.transitionDelay = d + 'ms';
+          el.classList.add('is-in');
+          setTimeout(function(){ el.style.transitionDelay=''; el.classList.add('is-done'); }, d + 700);
+        })(hits[n], Math.min(n * STEP, MAXDELAY));
+        io.unobserve(hits[n]);
+      }
+    }, { threshold:.12, rootMargin:'0px 0px -6% 0px' });
+    for(i=0;i<items.length;i++){ io.observe(items[i]); }
+  })();
 
   /* 인트로 타이틀 드래그 연출 — 화면에 들어와 있는 동안 계속 반복 */
   /* 60% 이상 보이면 켜고, 완전히 벗어나면 끈다(다시 들어올 때 처음부터 재생).
