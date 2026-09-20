@@ -550,17 +550,45 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-drag.is-on::after{left:100%;opacity:1;animation:gyfCaret 1s steps(1) 1.6s infinite;}
 @keyframes gyfCaret{0%{opacity:1}50%{opacity:0}}
 
+/* ===== [추가] 코스 약도 — 경로선·핀 등장 연출 ===== */
+/* .gyf-rt-anim은 스크립트가 붙인다 → JS가 안 돌면 선도 핀도 그냥 다 보인다.
+   경로선은 따라 그리지 않고 통째로 한 번에 나타난다(0.26초).
+   번호는 톡 튀어나오고(스케일), 라벨은 살짝 올라오며 따라붙는다.
+   핀은 transform에 위치가 물려 있어 건드리면 안 되므로 opacity만 쓰고,
+   스케일은 안쪽 번호 동그라미에만 건다 */
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-route-line{opacity:0;}
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-route-line.is-on{opacity:1;transition:opacity .26s ease-out;}
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin{opacity:0;}
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin.is-on{opacity:1;transition:opacity .22s ease-out;}
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin .gyf-rpin-num{
+  transform:scale(.4);transition:transform .34s cubic-bezier(.34,1.56,.64,1);
+}
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin.is-on .gyf-rpin-num{transform:scale(1);}
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin .gyf-rpin-txt{
+  opacity:0;transform:translateY(5px);
+  transition:opacity .26s ease-out .08s, transform .26s ease-out .08s;
+}
+.contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin.is-on .gyf-rpin-txt{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-route-line,
+  .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin{opacity:1;}
+  .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin .gyf-rpin-num{transform:none;}
+  .contents_div .gyf-page .gyf-route2.gyf-rt-anim .gyf-rpin .gyf-rpin-txt{opacity:1;transform:none;}
+}
+
 /* ===== [추가] 스크롤 등장 연출 — 섹션 요소가 올라오며 나타남 ===== */
 /* 숨김 상태는 스크립트가 .gyf-anim을 붙여야 켜진다.
    CSS에 기본으로 숨겨두면 JS가 막힌 환경(구형 브라우저·확장프로그램)에서
    본문이 영영 안 보이는 사고가 난다. 그래서 '보이는 것'이 기본값이다.
    애니메이션은 opacity/transform만 건드려 리플로우를 만들지 않는다.
-   세기 조절: 16px(올라오는 거리), .52s(속도) */
+   세기 조절: 28px(올라오는 거리), .7s(속도) */
 .contents_div .gyf-page.gyf-anim .gyf-rise{
-  opacity:0;transform:translateY(16px);
-  transition:opacity .52s cubic-bezier(.22,.61,.36,1), transform .52s cubic-bezier(.22,.61,.36,1);
+  opacity:0;transform:translate3d(0,28px,0);
 }
-.contents_div .gyf-page.gyf-anim .gyf-rise.is-in{opacity:1;transform:none;}
+.contents_div .gyf-page.gyf-anim .gyf-rise.is-in{
+  opacity:1;transform:translate3d(0,0,0);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+}
 /* 이미 자리를 잡은 뒤에는 transition을 지워 탭 전환·리사이즈 때 덜컥거리지 않게 한다 */
 .contents_div .gyf-page.gyf-anim .gyf-rise.is-done{transition:none;}
 @media (prefers-reduced-motion: reduce){
@@ -2368,13 +2396,72 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   var btns = wrap.querySelectorAll('.gyf-nav-btn');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ===== [추가] 코스 약도 — 경로선 나타남 + 핀 1,2,3,4 순서대로 ===== */
+  /* 선을 따라 그리는 연출은 뺐다(느리게 보임) → 경로선은 통째로 한 번에 나타난다.
+     핀만 번호 순서대로 톡톡 찍힌다.
+     · 화면에 들어오면 1회 재생, 탭을 바꾸면 그 지도를 다시 재생
+     · 모션 최소화·구형 브라우저면 아무것도 하지 않는다(= 원래대로 다 보임)
+     조절: LINE(선 나타나는 시간), START(핀 시작 시점), STEP(핀 간격) — 단위 ms */
+  (function(){
+    var box = wrap.querySelector('.gyf-route2');
+    if(!box) return;
+    if(reduce || !('IntersectionObserver' in window)) return;
+
+    var LINE = 260, START = 140, STEP = 90;
+    var maps = [];
+    Array.prototype.forEach.call(box.querySelectorAll('.gyf-route2-map'), function(map){
+      var svg = map.querySelector('.gyf-route-line');
+      var pins = map.querySelectorAll('.gyf-rpin');
+      if(!svg || !pins.length) return;
+      maps.push({ map:map, svg:svg, pins:pins, timers:[] });
+    });
+    if(!maps.length) return;
+    box.classList.add('gyf-rt-anim');
+
+    function reset(m){
+      for(var t=0;t<m.timers.length;t++){ clearTimeout(m.timers[t]); }
+      m.timers = [];
+      m.svg.classList.remove('is-on');
+      for(var i=0;i<m.pins.length;i++){ m.pins[i].classList.remove('is-on'); }
+      void m.svg.getBoundingClientRect();   /* 강제 리플로우 — 안 하면 되감기지 않는다 */
+    }
+    function play(m){
+      reset(m);
+      m.timers.push(setTimeout(function(){ m.svg.classList.add('is-on'); }, 10));
+      for(var i=0;i<m.pins.length;i++){
+        (function(pin, d){
+          m.timers.push(setTimeout(function(){ pin.classList.add('is-on'); }, d));
+        })(m.pins[i], START + i * STEP);
+      }
+    }
+    function playActive(){
+      for(var i=0;i<maps.length;i++){
+        if(maps[i].map.classList.contains('is-on')){ play(maps[i]); } else { reset(maps[i]); }
+      }
+    }
+
+    var seen = false;
+    var rio = new IntersectionObserver(function(ents){
+      for(var k=0;k<ents.length;k++){
+        if(ents[k].isIntersecting && !seen){ seen = true; playActive(); }
+      }
+    }, { threshold:0, rootMargin:'0px 0px -12% 0px' });
+    rio.observe(box);
+
+    /* 탭을 누르면 그 지도를 다시 재생 (클래스가 바뀐 뒤 실행되도록 뒤로 미룬다) */
+    Array.prototype.forEach.call(box.querySelectorAll('.gyf-route2-tab'), function(tab){
+      tab.addEventListener('click', function(){ if(seen) setTimeout(playActive, 0); });
+    });
+  })();
+
   /* ===== [추가] 스크롤 등장 연출 ===== */
   /* 섹션 헤더·소제목·리드문·카드가 화면에 들어올 때 살짝 올라오며 나타난다.
      · 숨김 상태는 여기서 .gyf-anim을 붙인 뒤에야 켜진다 → JS가 안 돌면 그냥 다 보인다
      · 모션 최소화 설정이거나 IntersectionObserver가 없으면 아예 시작하지 않는다
      · 히어로(#gjHero)는 자체 등장 연출이 있어 제외한다
      · 한 번 나타난 요소는 관찰을 끊는다(unobserve) — 스크롤을 올려도 다시 사라지지 않게
-     조절: threshold(얼마나 보여야 시작할지), STEP(순차 등장 간격), 위 CSS의 16px·.52s */
+     조절: rootMargin의 -12%(화면 아래 12% 지점을 경계선으로 — 값을 키우면 더 늦게 시작),
+           STEP(순차 등장 간격), 위 CSS의 28px·.7s */
   (function(){
     var page = wrap.querySelector('.gyf-page') || wrap;
     if(reduce || !('IntersectionObserver' in window)) return;
@@ -2404,9 +2491,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     if(!items.length) return;
 
     page.classList.add('gyf-anim');
-    for(i=0;i<items.length;i++){ items[i].classList.add('gyf-rise'); }
+    /* 접속 시점에 이미 화면에 보이는 요소는 숨기지 않는다 — 켜자마자 깜빡이는 것 방지 */
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var hidden = [];
+    for(i=0;i<items.length;i++){
+      if(items[i].getBoundingClientRect().top < vh) continue;
+      items[i].classList.add('gyf-rise');
+      hidden.push(items[i]);
+    }
+    if(!hidden.length) return;
+    items = hidden;
 
-    var STEP = 70, MAXDELAY = 280;
+    var STEP = 90, MAXDELAY = 360;
     var io = new IntersectionObserver(function(ents){
       /* 같은 순간에 들어온 것들끼리 위에서부터 차례로 */
       var hits = [];
@@ -2417,12 +2513,35 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
         (function(el, d){
           el.style.transitionDelay = d + 'ms';
           el.classList.add('is-in');
-          setTimeout(function(){ el.style.transitionDelay=''; el.classList.add('is-done'); }, d + 700);
+          setTimeout(function(){ el.style.transitionDelay=''; el.classList.add('is-done'); }, d + 850);
         })(hits[n], Math.min(n * STEP, MAXDELAY));
         io.unobserve(hits[n]);
       }
-    }, { threshold:.12, rootMargin:'0px 0px -6% 0px' });
+    }, { threshold:0, rootMargin:'0px 0px -12% 0px' });
     for(i=0;i<items.length;i++){ io.observe(items[i]); }
+
+    /* 페이지 맨 끝에 붙은 요소(푸터 해시태그 등)는 더 스크롤할 수 없어
+       등장선(화면 아래 12% 지점)에 영영 못 닿는다 → 바닥에 닿으면 남은 것을 모두 등장시킨다 */
+    var ticking = false;
+    function atBottom(){
+      ticking = false;
+      var de = document.documentElement;
+      var h = window.innerHeight || de.clientHeight;
+      var y = window.pageYOffset || de.scrollTop;
+      if(y + h < Math.max(de.scrollHeight, document.body.scrollHeight) - 4) return;
+      for(var m=0;m<items.length;m++){
+        var el = items[m];
+        if(el.classList.contains('is-in')) continue;
+        if(el.getBoundingClientRect().top > h) continue;
+        el.classList.add('is-in');
+        io.unobserve(el);
+      }
+    }
+    window.addEventListener('scroll', function(){
+      if(ticking) return; ticking = true;
+      (window.requestAnimationFrame || setTimeout)(atBottom);
+    }, { passive:true });
+    window.addEventListener('resize', atBottom);
   })();
 
   /* 인트로 타이틀 드래그 연출 — 화면에 들어와 있는 동안 계속 반복 */
