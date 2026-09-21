@@ -1753,6 +1753,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @media (max-width:720px){
   .contents_div .gyf-page .gyf-cn.gyf-cn--tour{--cn-ratio:69.75%;}
 }
+
+/* 카드뉴스 슬라이드 650px 이하 — 원본 비율(4:5) 그대로 노출, 블러 여백 제거 */
+@media (max-width:650px){
+  .contents_div .gyf-page .gyf-cn:not(.gyf-cn--tour){--cn-ratio:125%;}
+  .contents_div .gyf-page .gyf-cn:not(.gyf-cn--tour) .gyf-cn-bg{display:none;}
+  .contents_div .gyf-page .gyf-cn:not(.gyf-cn--tour) .gyf-cn-fig img:not(.gyf-cn-bg){object-fit:cover;}
+}
+@container gyfwrap (max-width:650px){
+  .contents_div .gyf-page .gyf-cn:not(.gyf-cn--tour){--cn-ratio:125%;}
+  .contents_div .gyf-page .gyf-cn:not(.gyf-cn--tour) .gyf-cn-bg{display:none;}
+  .contents_div .gyf-page .gyf-cn:not(.gyf-cn--tour) .gyf-cn-fig img:not(.gyf-cn-bg){object-fit:cover;}
+}
 </style>
 
 <div class="gyf-wrap">
