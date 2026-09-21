@@ -268,7 +268,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @media (max-width:720px){
 .contents_div .gyf-page .gyf-br-web{display:none;}
 }
-@container gyfwrap (max-width:779px){
+@container gyfwrap (max-width:750px){
 .contents_div .gyf-page .gyf-br-web{display:none;}
 }
 @media (max-width:720px){
@@ -1614,12 +1614,27 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-cn-track.is-anim{transition:transform .5s cubic-bezier(.65,0,.35,1);}
 .contents_div .gyf-page .gyf-cn-slide{flex:0 0 100%;width:100%;min-width:0;}
 .contents_div .gyf-page .gyf-cn-fig{position:relative;width:100%;overflow:hidden;background:#eee;}
-.contents_div .gyf-page .gyf-cn-fig,
-.contents_div .gyf-page .gyf-cn-fig > img{cursor:zoom-in;}
+.contents_div .gyf-page .gyf-cn[data-zoom] .gyf-cn-fig,
+.contents_div .gyf-page .gyf-cn[data-zoom] .gyf-cn-fig > img{cursor:zoom-in;}
 .contents_div .gyf-page .gyf-cn-fig::before{content:'';display:block;padding-top:var(--cn-ratio);}
 .contents_div .gyf-page .gyf-cn-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
 .contents_div .gyf-page .gyf-cn-bg{display:none;z-index:0;}
 .contents_div .gyf-page .gyf-cn-fig img:not(.gyf-cn-bg){z-index:1;}
+
+/* 투어 상품 슬라이드 (4:3) */
+.contents_div .gyf-page .gyf-tours{display:grid;grid-template-columns:repeat(2,1fr);gap:24px var(--gap);margin-top:20px;}
+.contents_div .gyf-page .gyf-tour{display:flex;flex-direction:column;gap:12px;min-width:0;}
+.contents_div .gyf-page .gyf-cn.gyf-cn--tour{--cn-ratio:75%;margin-top:0;}
+.contents_div .gyf-page .gyf-cn.gyf-cn--tour .gyf-cn-fig img{object-fit:cover;}
+.contents_div .gyf-page .gyf-cn.gyf-cn--tour .gyf-cn-dots{
+  position:absolute;left:50%;bottom:10px;z-index:3;
+  width:18%;margin:0;padding:2px 6px;transform:translateX(-50%);
+  border-radius:999px;background:rgba(20,18,24,.32);
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+}
+.contents_div .gyf-page .gyf-cn.gyf-cn--tour .gyf-cn-dot::before{background:rgba(255,255,255,.55);}
+.contents_div .gyf-page .gyf-cn.gyf-cn--tour .gyf-cn-dot.is-on::before{background:#fff;}
+@media (max-width:720px){ .contents_div .gyf-page .gyf-tours{grid-template-columns:1fr;} }
 
 /* 좌우 버튼 — 웹에서만 노출 */
 .contents_div .gyf-page .gyf-cn-arw{position:absolute;top:50%;z-index:2;display:flex;align-items:center;justify-content:center;width:36px;height:36px;margin-top:-18px;border-radius:50%;background:rgba(42,39,49,.58);transition:background-color .2s;}
@@ -1644,7 +1659,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-cn-fig,
 .contents_div .gyf-page .gyf-cn-fig > img{cursor:default;}
 }
-@container gyfwrap (max-width:779px){
+@container gyfwrap (max-width:750px){
 /* 모바일: 1단 + 정사각 비율 + 여백 블러 */
 .contents_div .gyf-page .gyf-relay{grid-template-columns:1fr;}
 .contents_div .gyf-page .gyf-relay > .gyf-p,
@@ -1666,8 +1681,29 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-cn-dot.is-on::before{width:7px;height:7px;background:var(--c-navy);}
 .contents_div .gyf-page .gyf-cn-dot:focus-visible{outline:3px solid var(--c-accent);outline-offset:1px;border-radius:4px;}
 .contents_div .gyf-page .gyf-cn-live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+/* 카드뉴스 페이지 표시: 웹 = 점 / 모바일 = 점 + 이미지 우측 하단 캡슐 */
+@media (max-width:720px){
+  .contents_div .gyf-page .gyf-cn[data-zoom] .gyf-cn-live{
+    position:absolute;right:8px;bottom:8px;z-index:3;
+    width:auto;height:auto;margin:0;padding:5px 9px;overflow:visible;clip:auto;white-space:nowrap;
+    border-radius:999px;background:rgba(20,18,24,.55);
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+    color:#fff;font-size:11px;font-weight:600;line-height:1;letter-spacing:.02em;
+    font-variant-numeric:tabular-nums;pointer-events:none;
+  }
+}
+@container gyfwrap (max-width:750px){
+  .contents_div .gyf-page .gyf-cn[data-zoom] .gyf-cn-live{
+    position:absolute;right:8px;bottom:8px;z-index:3;
+    width:auto;height:auto;margin:0;padding:5px 9px;overflow:visible;clip:auto;white-space:nowrap;
+    border-radius:999px;background:rgba(20,18,24,.55);
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+    color:#fff;font-size:11px;font-weight:600;line-height:1;letter-spacing:.02em;
+    font-variant-numeric:tabular-nums;pointer-events:none;
+  }
+}
 @media (max-width:720px){ .contents_div .gyf-page .gyf-cn-dots{margin-top:6px;} }
-@container gyfwrap (max-width:779px){ .contents_div .gyf-page .gyf-cn-dots{margin-top:6px;} }
+@container gyfwrap (max-width:750px){ .contents_div .gyf-page .gyf-cn-dots{margin-top:6px;} }
 @media (prefers-reduced-motion: reduce){
   .contents_div .gyf-page .gyf-cn-track.is-anim{transition:none;}
   .contents_div .gyf-page .gyf-cn-dot::before{transition:none;}
@@ -1683,6 +1719,39 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .gyf-page #gyf-s1 .gyf-cell:has(> .gyf-fig) > .gyf-cell-body{padding:12px 11px;}
   .contents_div .gyf-page #gyf-s4 .gyf-eat-body :where(p),
   .contents_div .gyf-page #gyf-s1 .gyf-cell-body :where(p){text-wrap:wrap;}
+}
+
+/* 모바일 h3 위 여백 +3px */
+@media (max-width:720px){
+  .contents_div .gyf-page .gyf-bhead{padding-top:3px;}
+}
+
+/* 투어 슬라이드 출처 */
+.contents_div .gyf-page .gyf-cn--tour .gyf-cn-view > .gyf-src{
+  position:absolute;z-index:3;right:8px;bottom:8px;
+  max-width:calc(100% - 16px);margin:0;
+  padding:3px 8px 4px;border-radius:4px;
+  background:rgba(42,39,49,.58);
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+  color:#fff;font-size:12px;font-weight:400;line-height:1.3;letter-spacing:-0.02em;
+  text-align:right;word-break:keep-all;pointer-events:none;
+}
+@media (max-width:720px){
+  .contents_div .gyf-page .gyf-cn--tour .gyf-cn-view > .gyf-src{
+    right:6px;bottom:6px;max-width:calc(100% - 12px);padding:2px 7px 3px;font-size:11px;
+  }
+}
+
+/* 여수세계섬박람회 주변 맛집 — h3 아래 이미지 16:10 (웹·모바일 동일) */
+.contents_div .gyf-page .gyf-fig.gyf-fig--43{border:1px solid var(--c-cline);border-radius:var(--r);}
+.contents_div .gyf-page .gyf-fig.gyf-fig--43::before{padding-top:62.5%;}
+
+/* 출처 표기 두께 일괄 400 */
+.contents_div .gyf-page .gyf-src{font-weight:400 !important;}
+
+/* 투어 슬라이드 모바일 높이 7% 축소 (75% × 0.93) */
+@media (max-width:720px){
+  .contents_div .gyf-page .gyf-cn.gyf-cn--tour{--cn-ratio:69.75%;}
 }
 </style>
 
@@ -1917,7 +1986,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 <div class="gyf-bhead"><span class="gyf-num" aria-hidden="true">2</span><h3 class="gyf-h3">광주 함께라서 더 좋다! 릴레이 혜택</h3></div>
 <div class="gyf-relay">
 <p class="gyf-p">광주관광공사, 한국공항공사, 광주비엔날레재단, 광주송정역세권 상권르네상스 사업추진단이 함께하는 ‘여행이 더 특별해지는 광주, 함께라서 더 좋다’ 캠페인에서도 광주비엔날레를 만날 수 있어요.</p>
-<div class="gyf-cn" role="group" aria-roledescription="캐러셀" aria-label="‘함께라서 더 좋다’ 카드뉴스">
+<div class="gyf-cn" data-zoom role="group" aria-roledescription="캐러셀" aria-label="‘함께라서 더 좋다’ 카드뉴스">
 <div class="gyf-cn-view">
 <div class="gyf-cn-track">
 <div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/카드뉴스1.webp" alt="‘여행이 더 특별해지는 광주, 함께라서 더 좋다’ 카드뉴스 1" loading="lazy" decoding="async"><img class="gyf-cn-bg" src="img/카드뉴스1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><button type="button" class="gyf-zoom" aria-label="카드뉴스 1 크게 보기"></button></div></div>
@@ -1933,6 +2002,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 </div>
 <button type="button" class="gyf-cn-arw gyf-cn-arw--prev" aria-label="이전 카드뉴스"></button>
 <button type="button" class="gyf-cn-arw gyf-cn-arw--next" aria-label="다음 카드뉴스"></button>
+<p class="gyf-cn-live" aria-live="polite">1 / 10</p>
 </div>
 <div class="gyf-cn-dots">
 <button type="button" class="gyf-cn-dot is-on" aria-current="true" aria-label="1번 카드뉴스"></button>
@@ -1946,7 +2016,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 <button type="button" class="gyf-cn-dot" aria-label="9번 카드뉴스"></button>
 <button type="button" class="gyf-cn-dot" aria-label="10번 카드뉴스"></button>
 </div>
-<p class="gyf-cn-live" aria-live="polite">1 / 10</p>
 </div>
 <div class="gyf-relay-benefit">
 <p class="gyf-minihead">제16회 광주비엔날레를 관람했다면?</p>
@@ -2028,9 +2097,57 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 <div class="gyf-block gyf-block--dark-cta">
 <div class="gyf-bhead"><span class="gyf-mark" aria-hidden="true"></span><h3 class="gyf-h3">2026은 호남관광문화주간! 이런 투어는 어때요?</h3></div>
 <p class="gyf-p">하나투어에서 올가을을 만끽할 호남 패키지 여행을 준비했어요. <br class="gyf-br-web">광주비엔날레와 여수세계섬박람회를 만날 수 있는 대표 상품을 소개할게요.</p>
-<div class="gyf-ctas">
+<div class="gyf-tours">
+<div class="gyf-tour">
+<div class="gyf-cn gyf-cn--tour" role="group" aria-roledescription="캐러셀" aria-label="호남광역힐링벨트 사진">
+<div class="gyf-cn-view">
+<div class="gyf-cn-track">
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/호남광역힐링벨트1.jpg" alt="호남광역힐링벨트 여행 사진 1" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/호남광역힐링벨트2.jpg" alt="호남광역힐링벨트 여행 사진 2" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/호남광역힐링벨트3.jpg" alt="호남광역힐링벨트 여행 사진 3" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/호남광역힐링벨트4.jpg" alt="호남광역힐링벨트 여행 사진 4" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/호남광역힐링벨트5.jpg" alt="호남광역힐링벨트 여행 사진 5" loading="lazy" decoding="async"></div></div>
+</div>
+<button type="button" class="gyf-cn-arw gyf-cn-arw--prev" aria-label="이전 사진"></button>
+<button type="button" class="gyf-cn-arw gyf-cn-arw--next" aria-label="다음 사진"></button>
+<p class="gyf-src">출처: 하나투어</p>
+</div>
+<div class="gyf-cn-dots">
+<button type="button" class="gyf-cn-dot is-on" aria-current="true" aria-label="1번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="2번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="3번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="4번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="5번 사진"></button>
+</div>
+<p class="gyf-cn-live" aria-live="polite">1 / 5</p>
+</div>
 <a class="gyf-cta gyf-cta--line" href="https://www.hanatour.com/trp/pkg/CHPC0PKG0200M200?pkgCd=AKP540260922001&amp;prePage=major-products&amp;directSale=PM006A7B3E06" target="_blank" rel="noopener noreferrer"><span>호남광역힐링벨트</span><span class="gyf-cta-arrow" aria-hidden="true"></span></a>
+</div>
+<div class="gyf-tour">
+<div class="gyf-cn gyf-cn--tour" role="group" aria-roledescription="캐러셀" aria-label="광주/화순 예술투어 사진">
+<div class="gyf-cn-view">
+<div class="gyf-cn-track">
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/광주화순예술투어1.jpg" alt="광주/화순 예술투어 여행 사진 1" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/광주화순예술투어2.jpg" alt="광주/화순 예술투어 여행 사진 2" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/광주화순예술투어3.jpg" alt="광주/화순 예술투어 여행 사진 3" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/광주화순예술투어4.jpg" alt="광주/화순 예술투어 여행 사진 4" loading="lazy" decoding="async"></div></div>
+<div class="gyf-cn-slide"><div class="gyf-cn-fig"><img src="img/광주화순예술투어5.jpg" alt="광주/화순 예술투어 여행 사진 5" loading="lazy" decoding="async"></div></div>
+</div>
+<button type="button" class="gyf-cn-arw gyf-cn-arw--prev" aria-label="이전 사진"></button>
+<button type="button" class="gyf-cn-arw gyf-cn-arw--next" aria-label="다음 사진"></button>
+<p class="gyf-src">출처: 하나투어</p>
+</div>
+<div class="gyf-cn-dots">
+<button type="button" class="gyf-cn-dot is-on" aria-current="true" aria-label="1번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="2번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="3번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="4번 사진"></button>
+<button type="button" class="gyf-cn-dot" aria-label="5번 사진"></button>
+</div>
+<p class="gyf-cn-live" aria-live="polite">1 / 5</p>
+</div>
 <a class="gyf-cta gyf-cta--line" href="https://www.hanatour.com/trp/pkg/CHPC0PKG0200M200?pkgCd=AKP541260922000&amp;prePage=major-products&amp;directSale=PM006A7B3E06" target="_blank" rel="noopener noreferrer"><span>광주/화순 예술투어</span><span class="gyf-cta-arrow" aria-hidden="true"></span></a>
+</div>
 </div>
 </div>
 
@@ -2169,7 +2286,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 <div class="gyf-block gyf-block--dark-cta">
 <div class="gyf-bhead"><span class="gyf-mark" aria-hidden="true"></span><h3 class="gyf-h3">여수세계섬박람회 주변 맛집</h3></div>
-<div class="gyf-pair" style="margin-top:0">
+<div class="gyf-fig gyf-fig--43">
+<img src="img/여수박람회주변맛집.webp" alt="" loading="lazy" decoding="async">
+</div>
+<div class="gyf-pair">
 <div class="gyf-cell is-ys"><div class="gyf-cell-body">
 <p class="gyf-cell-txt">여수의 제철 식재료로 차린 건강한 가정식 백반을 맛보고 싶다면 여수시가 지정한 섬힐링밥상 식당을 이용하세요.</p>
 <a class="gyf-cta" href="https://island.yeosu2026.or.kr/content/4_5" target="_blank" rel="noopener noreferrer"><span>섬별 지정 업소 확인하기(예약 필수)</span><span class="gyf-cta-arrow" aria-hidden="true"></span></a>
@@ -2806,7 +2926,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       try{ lb.querySelector('.gyf-lb-close').focus(); }catch(err){}
     }
 
-    track.addEventListener('click', function(e){
+    if(box.hasAttribute('data-zoom')) track.addEventListener('click', function(e){
       if(!webMode()) return;
       var sl = e.target && e.target.closest ? e.target.closest('.gyf-cn-slide') : null;
       if(!sl) return;
