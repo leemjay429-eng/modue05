@@ -225,6 +225,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .gyf-page .gyf-checks li > span:last-child{font-weight:700;}
 .contents_div .gyf-page .gyf-checks small{font-weight:400;display:block;padding-top:0;font-size:var(--fs-lead);color:var(--c-sub);}
 .contents_div .gyf-page .gyf-note{margin-top:12px;font-size:var(--fs-lead);line-height:1.7;color:var(--c-sub);}
+.contents_div .gyf-page .gyf-note--edge{padding-left:4px;}
+.contents_div .gyf-page .gyf-note:has(.gyf-br480){text-wrap:wrap;}
+.contents_div .gyf-page .gyf-br480{display:none;}
+@media (max-width:480px){ .contents_div .gyf-page .gyf-br480{display:inline;} .contents_div .gyf-page .gyf-note--edge{padding-right:4px;text-align:right;} }
+@container gyfwrap (max-width:480px){ .contents_div .gyf-page .gyf-br480{display:inline;} .contents_div .gyf-page .gyf-note--edge{padding-right:4px;text-align:right;} }
 .contents_div .gyf-page .gyf-tip{margin-top:var(--gap);padding:20px var(--pad);border-radius:8px;background:var(--c-bg);}
 
 /* 맛집 */
@@ -1971,7 +1976,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 <div class="gyf-ctas gyf-ctas--one">
 <a class="gyf-cta" href="https://intro.jeonnamtour.kr/participation-info" target="_blank" rel="noopener noreferrer"><span>섬 반값 여행 자세히 보기</span><span class="gyf-cta-arrow" aria-hidden="true"></span></a>
 </div>
-<p class="gyf-note">※ 10월 중 ‘2026 하반기 여행가는 달’과 연계한 ‘숙박할인 페스타’ 추진 예정</p>
+<p class="gyf-note gyf-note--edge">※ 10월 중 ‘2026 하반기 여행가는 달’과 연계한 <br class="gyf-br480">‘숙박할인 페스타’ 추진 예정</p>
 </div>
 </div>
 </section>
